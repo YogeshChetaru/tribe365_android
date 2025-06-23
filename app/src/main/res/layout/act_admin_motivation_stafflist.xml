@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Select staff"
+            android:textAllCaps="true"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/text_size_medium"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_search"
+            android:orientation="horizontal">
+
+            <SearchView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="40sp"
+                android:animationCache="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="fill_horizontal"
+                android:hint="Search"
+                android:iconifiedByDefault="false"
+                android:orientation="horizontal"
+                android:textSize="@dimen/text_size_medium"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_staff_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="10dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fb_select_staff"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:contentDescription="@string/app_name"
+                android:tint="@color/white"
+                android:visibility="gone"
+                app:borderWidth="0dp"
+                app:elevation="2dp"
+                app:srcCompat="@drawable/ic_check_right" />
+
+        </RelativeLayout>
+
+
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/rv_staff_list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="10dp" />-->
+
+        <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_marginBottom="50dp"-->
+        <!--android:backgroundTint="@color/colorPrimary"-->
+        <!--app:borderWidth="0dp"-->
+        <!--app:elevation="2dp"-->
+        <!--app:srcCompat="@drawable/plus" />-->
+        <!--</RelativeLayout>-->
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,62 @@
+package com.chetaru.tribe365_new.Adapter;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.chetaru.tribe365_new.API.Models.ModelTierList;
+import com.chetaru.tribe365_new.databinding.RowTierListBinding;
+
+import java.util.ArrayList;
+
+public class Ad_TierList extends RecyclerView.Adapter<Ad_TierList.ViewHolder> {
+
+    ArrayList<ModelTierList> list = new ArrayList<>();
+    private Context context;
+
+
+    public Ad_TierList(ArrayList<ModelTierList> list, Context context) {
+        this.list = list;
+        notifyDataSetChanged();
+        this.context = context;
+
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater=LayoutInflater.from(context);
+        RowTierListBinding binding=RowTierListBinding.inflate(inflater,parent,false);
+
+        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_tier_list, parent, false);
+        return new ViewHolder(binding);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        holder.itemBinding.tvTier.setText(list.get(position).getName());
+    }
+
+    @Override
+    public int getItemCount() {
+
+        try {
+            return list.size();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tv_tier;
+        RowTierListBinding itemBinding;
+        public ViewHolder(RowTierListBinding itemBinding) {
+            super(itemBinding.getRoot());
+            this.itemBinding=itemBinding;
+            //tv_tier = v.findViewById(R.id.tv_tier);
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="@dimen/activity_margin_very_big"
+    android:layout_marginEnd="@dimen/activity_margin_very_big"
+    app:cardElevation="5dp"
+    android:background="@color/transparent"
+    app:cardCornerRadius="10dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_padding_half"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_marginStart="@dimen/activity_padding_half"
+        android:textColor="@color/black"
+        android:text="Logout ?"
+        android:textSize="@dimen/text_size_very_big" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/field_back"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:fontFamily="@font/roboto"
+        android:text="@string/logout_title"
+        android:textSize="@dimen/text_size_big" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="100dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="10dp"
+            android:textSize="@dimen/text_size_big"
+            android:text="@string/logout_cancel" />
+
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="10dp"
+            android:textSize="@dimen/text_size_big"
+            android:text="@string/logout"
+            android:textColor="@color/red" />
+    </RelativeLayout>
+
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

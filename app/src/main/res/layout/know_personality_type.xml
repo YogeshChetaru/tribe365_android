@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_personality_typeMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/light_gry"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lyt_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_diagnostic_graph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyt_diagnostics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/person_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="350dp"
+                                    android:layout_margin="10dp" />
+
+                                <TextView
+                                    android:id="@+id/tv_personality_back"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:padding="10dp"
+                                    android:fontFamily="@font/roboto"
+                                    android:text="Back"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/text_size_small"
+                                    android:visibility="gone" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:visibility="visible"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_person_graph_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_margin_quarter"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_diagnostic_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/roboto"
+                            android:text="No records found"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/text_size_normal" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <!-- <LinearLayout
+         android:id="@+id/ll_personality_type_parent"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="5dp"
+         android:orientation="vertical"
+         android:visibility="visible">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="5dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginRight="5dp"
+             android:orientation="horizontal">
+
+             <android.support.v7.widget.CardView
+                 android:layout_width="match_parent"
+                 android:layout_height="120dp"
+                 android:layout_margin="5dp"
+                 android:layout_weight="1"
+                 android:orientation="vertical"
+                 app:cardBackgroundColor="@color/dot_3"
+                 app:cardElevation="10dp"
+                 app:cardPreventCornerOverlap="true">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:orientation="vertical">
+
+                     <TextView
+                         android:id="@+id/tv_box_one_st"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:gravity="center"
+                         android:text="ST"
+                         android:textColor="@color/white"
+                         android:textSize="16dp"
+
+                         android:textStyle="bold" />
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:layout_marginLeft="15dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="15dp"
+                         android:layout_marginBottom="10dp"
+                         android:background="@color/white" />
+
+                     <TextView
+                         android:id="@+id/tv_adm_cot_funt_ST_rating"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:gravity="center"
+                         android:text="0%"
+                         android:textColor="@color/white"
+                         android:textSize="16dp"
+                         android:textStyle="bold" />
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:layout_marginLeft="15dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="15dp"
+                         android:layout_marginBottom="10dp"
+                         android:background="@color/white" />
+                 </LinearLayout>
+
+             </android.support.v7.widget.CardView>
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="5dp"
+                 android:layout_weight="1"
+                 android:orientation="horizontal">
+
+                 <android.support.v7.widget.CardView
+                     android:layout_width="match_parent"
+                     android:layout_height="120dp"
+                     android:layout_weight="1"
+                     android:orientation="vertical"
+                     app:cardBackgroundColor="@color/dot_4"
+                     app:cardElevation="10dp"
+                     app:cardPreventCornerOverlap="true">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:id="@+id/tv_box_two_sf"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:gravity="center"
+                             android:text="SF"
+                             android:textColor="@color/white"
+                             android:textSize="16dp"
+                             android:textStyle="bold" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="0.5dp"
+                             android:layout_marginLeft="15dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="15dp"
+                             android:layout_marginBottom="10dp"
+                             android:background="@color/white" />
+
+                         <TextView
+                             android:id="@+id/tv_adm_cot_funt_SF_rating"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:gravity="center"
+                             android:text="0%"
+                             android:textColor="@color/white"
+                             android:textSize="16dp"
+                             android:textStyle="bold" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="0.5dp"
+                             android:layout_marginLeft="15dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="15dp"
+                             android:layout_marginBottom="10dp"
+                             android:background="@color/white" />
+                     </LinearLayout>
+                 </android.support.v7.widget.CardView>
+             </LinearLayout>
+         </LinearLayout>
+
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="5dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginRight="5dp"
+             android:orientation="horizontal">
+
+             <android.support.v7.widget.CardView
+                 android:layout_width="match_parent"
+                 android:layout_height="120dp"
+                 android:layout_margin="5dp"
+                 android:layout_weight="1"
+                 android:background="@color/colorPrimary"
+                 android:orientation="vertical"
+                 app:cardBackgroundColor="@color/dot_4"
+                 app:cardElevation="10dp"
+                 app:cardPreventCornerOverlap="true">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:orientation="vertical">
+
+                     <TextView
+                         android:id="@+id/tv_box_three_nt"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:gravity="center"
+                         android:text="NT"
+                         android:textColor="@color/white"
+                         android:textSize="16dp"
+                         android:textStyle="bold" />
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:layout_marginLeft="15dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="15dp"
+                         android:layout_marginBottom="10dp"
+                         android:background="@color/white" />
+
+                     <TextView
+                         android:id="@+id/tv_adm_cot_funt_NT_rating"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:gravity="center"
+                         android:text="0%"
+                         android:textColor="@color/white"
+                         android:textSize="16dp"
+                         android:textStyle="bold" />
+
+                     <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:layout_marginLeft="15dp"
+                         android:layout_marginTop="10dp"
+                         android:layout_marginRight="15dp"
+                         android:layout_marginBottom="10dp"
+                         android:background="@color/white" />
+                 </LinearLayout>
+             </android.support.v7.widget.CardView>
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="5dp"
+                 android:layout_weight="1"
+                 android:orientation="horizontal">
+
+                 <android.support.v7.widget.CardView
+                     android:layout_width="match_parent"
+                     android:layout_height="120dp"
+                     android:layout_weight="1"
+                     android:orientation="vertical"
+                     app:cardBackgroundColor="@color/dot_3"
+                     app:cardElevation="10dp"
+                     app:cardPreventCornerOverlap="true">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_gravity="center"
+                         android:orientation="vertical">
+
+                         <TextView
+                             android:id="@+id/tv_box_four_nf"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:gravity="center"
+                             android:text="NF"
+                             android:textColor="@color/white"
+                             android:textSize="16dp"
+                             android:textStyle="bold" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="0.5dp"
+                             android:layout_marginLeft="15dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="15dp"
+                             android:layout_marginBottom="10dp"
+                             android:background="@color/white" />
+
+                         <TextView
+                             android:id="@+id/tv_adm_cot_funt_NF_rating"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:gravity="center"
+                             android:text="0%"
+                             android:textColor="@color/white"
+                             android:textSize="16dp"
+                             android:textStyle="bold" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="0.5dp"
+                             android:layout_marginLeft="15dp"
+                             android:layout_marginTop="10dp"
+                             android:layout_marginRight="15dp"
+                             android:layout_marginBottom="10dp"
+                             android:background="@color/white" />
+                     </LinearLayout>
+                 </android.support.v7.widget.CardView>
+             </LinearLayout>
+         </LinearLayout>
+     </LinearLayout>-->
+
+</LinearLayout>

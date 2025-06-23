@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lyt_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin_big"
+            android:layout_marginEnd="@dimen/activity_margin_big"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lyt_indi_graph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:text="Supercharging - Motivation"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_big"
+                        android:fontFamily="@font/roboto_medium"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_motivation_help"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="6"
+                        android:gravity="right"
+                        android:visibility="gone">
+
+                        <include layout="@layout/ll_btn_help" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_sot_graph_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textcolor"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_medium"
+                     />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <Spinner
+                        android:id="@+id/sp_office"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_screen6" />
+
+                    <Spinner
+                        android:id="@+id/sp_depart"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_screen6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5sp"
+                        android:background="@drawable/background_sot_white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
+                            android:text="Motivation"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/text_size_big"
+                            tools:ignore="HardcodedText" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.github.mikephil.charting.charts.BarChart
+                                android:id="@+id/chart"
+                                android:layout_width="match_parent"
+                                android:layout_height="350dp" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:layout_below="@+id/chart"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="-30dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginBottom="5dp"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/img_graph_text"
+                                android:visibility="gone" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/background_cot1"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_sot_motivation_graph"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_undo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rnd_bt_primary"
+                android:gravity="center"
+                android:padding="@dimen/activity_padding_half"
+                android:text="REDO/REVIEW QUESTIONNAIRE"
+                android:textAllCaps="true"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/text_size_medium"
+                android:visibility="visible"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

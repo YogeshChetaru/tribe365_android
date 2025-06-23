@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/field_back">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/field_colorblock"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_report_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textSize="@dimen/text_size_medium"
+            android:text="Reports"
+            android:textAllCaps="true"
+            android:textColor="@color/textcolor"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_graph_color" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_report_sublist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2.5dp" />
+    </LinearLayout>
+
+</LinearLayout>

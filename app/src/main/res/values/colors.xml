@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimary_bule">#EB1C24</color>-->
+    <color name="colorPrimary">#EB1C24</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#868686</color>
+    <color name="back_blue">#303F9F</color>
+    <color name="light_color">#aaaaaa</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="player_colorTransparent">#cc474747</color>
+    <color name="date_color">#707070</color>
+
+
+    <color name="card_light_shadow">#FBFBFB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="cardback">#515050</color>
+    <color name="textcolor">#333333</color>
+    <color name="dia_textcolor">#434343</color>
+    <color name="textcolorsecondary">#696969</color>
+    <color name="field_back">#e8e8e9</color>
+    <color name="border_color">#9a9a9a</color>
+    <color name="border_color_opacity">#7C9A9A9A</color>
+    <color name="motion_index_low">#eb1c24</color>
+    <color name="motion_index_medium">#ffde00</color>
+    <color name="motion_index_high">#17ba0a</color>
+    <color name="offloading_bg">#bbbbbb</color>
+
+    <color name="font">#000000</color>
+    <color name="seek_bar">#e70808</color>
+    <color name="red">#EB1C24</color>
+    <!-- <color name="red">#0000ff</color>-->
+    <color name="background_dialog">#ebd6d1d1</color>
+    <color name="segmentblock">#333333</color>
+
+    <color name="edit_bg">#f2f2f2</color>
+
+    <color name="action_primary">#97d5a1</color>
+    <color name="action_secondary">#9ec9e1</color>
+    <color name="action_tertiary">#f5cdd1</color>
+
+    <color name="navigationBarColor">#000000</color>
+    //Cot----------------------------------------------
+    <color name="black">#000</color>
+    <color name="white_gry">#f7f7f7</color>
+    <color name="dark_grey">#3b3b3b</color>
+
+
+    <color name="bg_graph_color">#868686</color>
+    //DOT--------------------
+    <color name="color_0_red">#fc0000</color>
+    <color name="color_4_mid_green">#71c390</color>
+    <color name="color_green">#00B050</color>
+
+    <color name="buble_page">#ececec</color>
+
+    <color name="non_Clickable_color">#f9dedada</color>
+    <color name="non_Clickable_textcolor">#878787</color>
+
+    //-------------------------------------------------------------------
+    <color name="light_gry">#efefef</color>
+    <color name="gry">#999896</color>
+    <color name="bg_light_grey">#F8F8F8</color>
+    //-------------Admin Report-------------------------
+
+    <color name="adm_Yellow">#f1d621</color>
+
+    <color name="graph_color">#ff454b</color>
+    //---------------------------------new color
+    <color name="dot_0">#b2b2b2</color>
+    <color name="dot_1">#ffa3a6</color>
+    <color name="dot_2">#ff8085</color>
+    <color name="dot_3">#ff454b</color>
+    <color name="dot_4">#eb1c24</color>
+
+    <color name="placeholder_grey">#AAADC4</color>
+    <color name="placeholder_grey_20">#33AAADC4</color>
+    <color name="bg_white">#F8F8F8</color>
+
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow_1">#d4d4d4</color>
+    <color name="card_shadow_2">#dddddd</color>
+    <color name="transparent">#00000000</color>
+
+     <!--/////////////////////// Button on Offloading ///////////////////////////-->
+    <color name="yellow_light_button">#FFF2BC</color>
+    <color name="yellow_dark_text">#E1BE0D</color>
+    <color name="green_light_button">#DFF5E4</color>
+    <color name="green_dark_text">#54B569</color>
+</resources>

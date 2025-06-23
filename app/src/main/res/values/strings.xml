@@ -1,0 +1,341 @@
+<resources>
+    <string name="app_name">Tribe365</string>
+    <!-- <string name="app_name">DemoTribe365</string>-->
+
+    <!--          Globle text          -->
+    <string name="pleaseCheckInternet">Please check your Internet connection</string>
+    <string name="messageText">Message</string>
+    <string name="default_notification_channel_id">questions</string>
+    <string name="no_records_found">No records found</string>
+    <string name="link">link</string>
+    <string name="nav_profile">Profile</string>
+
+    <string name="No">No</string>
+    <string name="Yes">Yes</string>
+    <string name="connection_check">Please Check Internet Connection..</string>
+
+
+    <string name="Are_you_sure_you_want_to_exit">Are you sure you want to exit?</string>
+
+
+    <!--        Login String set          -->
+    <string name="user">User</string>
+    <string name="existing_user">Existing User</string>
+    <string name="new_user">New User</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="signin">SIGN IN</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="help">Help</string>
+    <string name="enter_valid_user">Please enter valid username</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="confirm_pass_validation">Please confirm password</string>
+    <string name="password_and_confirm_pass_validation">Your password and confirmed password do not match</string>
+
+    <!--              Forget password             -->
+    <string name="enter_email_id">Please enter email ID</string>
+    <string name="valid_email">Please enter valid Email.</string>
+    <string name="forget_desc">Enter your email below to reset your password</string>
+    <string name="forget_email">Email</string>
+    <string name="submit">SUBMIT</string>
+
+    <!--                    HOME                     -->
+    <string name="app_update">Updated version of App available</string>
+    <string name="app_update_desc">Please update to improve functionality</string>
+    <string name="kudos_sent">Kudos Sent Successfully!</string>
+    <string name="sentiment_submit">Sentiment Submitted Successfully!</string>
+    <string name="view_more">VISION</string>
+    <string name="view_play">VISION MAP</string>
+
+    <!--                       Know Member                 -->
+    <string name="rank">Rank </string>
+    <string name="msg_data_private">data is set to Private</string>
+    <string name="last_months_kudos_champs">Last month\'s Kudos Champs</string>
+    <string name="good_bad_day_index">Sentiment Index</string>
+    <string name="know_members">Know Members</string>
+    <string name="culture_index">Culture Index</string>
+    <string name="motivation">Motivation</string>
+
+    <!--                       Individual report                 -->
+    <string name="title_kudos">Kudos</string>
+    <string name="title_engagement">Engagement Index</string>
+    <string name="offloads_report">Offloads Reported</string>
+    <string name="Organisation">Organisation</string>
+    <string name="Team">Team</string>
+    <string name="you">You</string>
+
+
+    <!--                       Logout                    -->
+    <string name="logout_title">Are you sure you want to logout?</string>
+    <string name="logout_cancel">Cancel</string>
+    <string name="logout">Logout</string>
+    <string name="enter_first_name">please enter first name</string>
+    <string name="enter_last_name">Please enter last name</string>
+    <string name="enter_contact_details">Please enter contact details</string>
+
+
+    <!--                profile User                    -->
+    <string name="account_info">ACCOUNT INFORMATION</string>
+    <string name="data_private">Make my data Private</string>
+    <string name="camera_msg">Image not set please try again</string>
+    <string name="change_password">Change Password</string>
+    <string name="engagement_index">Engagement Index</string>
+    <string name="personality_type">Personality Type</string>
+    <string name="team_role">Team Role</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="support">Support</string>
+    <string name="app_tour">App Tour</string>
+
+
+    <!--                  Customer Support                -->
+    <string name="support_blank_msg">If you have experienced any issues with the app, please report them here </string>
+    <string name="custom_support_msg">Message cannot be blank</string>
+    <string name="no_submission_yet">No submission yet</string>
+
+    <!--                     Offloading                    -->
+    <string name="offloading">Offloading</string>
+    <string name="reflection">Reflection</string>
+    <string name="no_offloading_yet">No offloading submitted yet</string>
+    <string name="no_reflection_yet">No reflection submitted yet</string>
+    <string name="offloading_hint"><font size="10">Any good things, bad things to highlight? \n We love ideas, observations, thoughts,
+        feelings and emotions \n The Tribe team keep everything anonymous and \n non-identifiable,
+         so you\'ve got the freedom to say whatever \n you think the company needs to hear about</font> </string>
+
+
+    <string name="please_enter_reflection">Please enter description of reflection</string>
+    <string name="please_enter_offloading">Please enter description of offloading</string>
+    <string name="no_msg_found">No message found</string>
+    <string name="no_chat_available">No chat available</string>
+
+    <!--                   Change Password                -->
+    <!--               validation             -->
+    <string name="enter_your_current_password">Please enter your current password.</string>
+    <string name="please_enter_password">Please enter password.</string>
+    <string name="enter_confirm_password">Please enter confirm password.</string>
+    <!--       layout             -->
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="save">SAVE</string>
+
+    <!--                Belief rating text              -->
+    <string name="zero_rating_text"> - I do not understand what it means to be</string>
+    <string name="first_rating"> - I understand what it means to be</string>
+    <string name="i_am">, I am</string>
+
+
+    <!--                     Action module                 -->
+    <string name="please_select_one_tier">Please select an option</string>
+    <string name="please_select_responsible">Please select responsible person for respective action</string>
+    <string name="please_enter_start_date">Please enter start date</string>
+    <string name="please_enter_due_date">Please enter due date</string>
+    <string name="please_select_Status">Please select status</string>
+    <string name="please_enter_description">Please enter description</string>
+    <string name="are_you_sure_you_want">Are you sure you want to delete this action?</string>
+    <string name="no_staff_found">No staff found</string>
+    <string name="select_tier">SELECT TIER</string>
+
+    <!--                 Free Version             -->
+    <string name="how_s_things_at_work_today">How\'s things at work today?</string>
+    <string name="sentiment_index">Sentiment Index</string>
+    <!--                   Team Feedback               -->
+    <string name="please_select_answer">Please select an answer for question </string>
+    <string name="ques_not_distri">Questions are not distributed yet</string>
+
+    <!--              Team Role                    -->
+    <string name="please_revise_your_score">Please revise your scores, total scores should be 10</string>
+    <string name="please_provide_score_option">Please provide score for option </string>
+
+    <!--                  Notification                -->
+    <string name="tap_to_reload">Tap to reload</string>
+    <string name="error_msg_unknown">An unexpected error occurred</string>
+    <!--               Notification list //check list -->
+    <string name="checklist_evaluate_yourself_against_tribe_value">Evaluate yourself against Tribe Values</string>
+    <string name="checklist_complete_personality_Type_Questionnaire">Complete Personality Type Questionnaire</string>
+    <string name="checklist_Complete_Team_Role_Questionnaire">Complete Team Role Questionnaire</string>
+    <string name="checklist_Complete_Culture_Structure_Questionnaire">Complete  Culture Structure Questionnaire</string>
+    <string name="checklist_Complete_Motivation_Questionnaire">Complete Motivation Questionnaire</string>
+    <string name="checklist_Complete_Tribeometer_Survey">Complete Tribeometer Survey</string>
+    <string name="checklist_Complete_Diagnostic_Survey">Complete Diagnostic Survey</string>
+
+    <!--              Notification List //todo list       -->
+    <string name="todolist_Review_your_values_Monthly">Review your values(Monthly)</string>
+    <string name="todolist_Review_Personality_Type_Questionnaire">Review Personality Type Questionnaire</string>
+    <string name="todolist_Review_TeamRoleQuestionnaire">Review Team Role Questionnaire</string>
+    <string name="todolist_Review_CultureStructureQuestionnaire">Review Culture Structure Questionnaire</string>
+    <string name="todolist_Review_MotivationQuestionnaire">Review Motivation Questionnaire</string>
+    <string name="todolist_Review_TribeometerSurvey">Review Tribeometer Survey</string>
+    <string name="todolist_Review_DiagnosticSurvey">Review Diagnostic Survey</string>
+    <string name="todolist_AwardGreenBubblestoyourcolleaguesDaily">Award Kudos to your colleagues(Daily)</string>
+
+
+    <!--         Dot Details               -->
+    <string name="vision_caps">VISION</string>
+    <string name="mission_caps">MISSION</string>
+    <string name="focus_caps">FOCUS</string>
+    <string name="done">Done</string>
+    <string name="belief_caps">BELIEF</string>
+    <string name="value_caps">VALUES</string>
+    <string name="super_admin">Super Admin</string>
+
+
+    <string name="chetaru_logo">chetaru logo</string>
+    <string name="tribe_365">tribe logo</string>
+    <string name="spportive">Supportive</string>
+    <string name="up_p0">1. concerned only for myself</string>
+    <string name="no_pbar">3</string>
+    <string name="add_actions">ADD ACTIONS</string>
+    <string name="status_caps">STATUS</string>
+    <string name="description_caps">DESCRIPTION</string>
+
+
+    <!--for youtube videos play-->
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+
+
+    <!--PPT vision Flow App Tour-->
+    <string name="daily_enga_ppt_basic">Improve your daily engagement score up by interacting with the daily good day/bad icons. See what type of day your team had and what your engagement score is like compared to others. You can always improve by completing Surveys.</string>
+
+    <string name="risk_list_ppt">Click on the individual risk to see the actions and responsible owner.</string>
+    <string name="risk_action_ppt">You can also type comments in this to add to any risks you have been assigned actions for</string>
+    <string name="risk_spinner_ppt">This opens up your organisation risk register.
+From here you can look at the Organisations risk via strengths, weaknesses, opportunities and threats or all by selecting SWOT </string>
+    <string name="risk_ppt">Click on this icon to open the risk module</string>
+    <string name="wellcome_ppt">Welcome to the Tribe365 app. Now you are logged in let"'"s go through a few features on the app</string>
+    <string name="vision_ppt">Click here to see a short video on your organisation"'"s vision</string>
+    <string name="belief_ppt">Press each Belief value and score your understanding using the sliding scales</string>
+    <string name="vision_map_ppt">Now you have seen the Organisational vision, click here to score yourself against the values  </string>
+    <string name="notification_ppt">The bell icon is where you find all alerts/interaction from the Tribe team. You can also archive and view archived notifications and interactions here.
+                                        When you first login, this is where all your culture surveys for completion are listed</string>
+    <string name="profile_ppt">This is your profile. Here, you can check whether your contact details are correct, change passwords and look at your individual Culture profile </string>
+    <string name="kudous_ppt">Award Kudos to your colleagues by selecting the relevant observed behaviour and selecting the colleague from the dropdown menu. Then hit send!</string>
+    <string name="kudos_award_ppt">   Amazing Award to your colleagues by giving relevant messages and selecting the colleagues from the dropdown menu. Then hit send!</string>
+    <string name="daily_enga_ppt">Improve your daily engagement score up by interacting with the daily good day/bad icons. See what type of day your team had and what your engagement score is like compared to others. You can always improve by completing Kudos &amp; Surveys.</string>
+
+    <string name="feedback_ppt">You can report anything here in the free text box. Give it a try now and Dan or Holly Will get back to you. Remember that we want to hear about anything you think the organisation needs to hear </string>
+
+    <string name="comp_logo_ppt">Pressing your organisation logo will take you back to the home screen.</string>
+    <string name="thanks_ppt">Ok. Thanks for letting us show you around. Please explore the app yourself and let us know any feedback \n Happy Tribeing. </string>
+
+    //----------------SOT TExt----------------------------
+    <string name="st_qus_subtitle">In each section,select the most applicable sentence to your organisation</string>
+    <string name="st_sot_res_heading_1">Organisation Culture Structure</string>
+    <string name="st_sot_summar">Summary of Organisation Culture Structure</string>
+    <string name="st_sot_button">REDO/REVIEW QUESTIONNAIRE</string>
+    <string name="st_sot_motivation_subtitle">In each section, select the most applicable sentence to your organisation</string>
+
+
+    <!--                           api Call                          -->
+    //api list
+
+
+    //-------------------------------Diagnostics----------------------------------
+    <string name="api_getDiagnosticQuestionList">getDiagnosticQuestionList</string>
+    //Diagnostics Questions
+    <string name="api_getTribeometerQuestionList">getTribeometerQuestionList</string>
+    //tribometer question
+    <string name="api_addDiagnosticAnswers">addDiagnosticAnswers</string>
+    <string name="api_addTribeometerAnswers">addTribeometerAnswers</string>
+    <string name="api_getDiagnosticCompletedAnswers">getDiagnosticCompletedAnswers</string>
+    <string name="api_getTribeometerCompletedAnswers">getTribeometerCompletedAnswers</string>
+    <string name="api_updateTribeometerAnswers">updateTribeometerAnswers</string>
+    <string name="api_updateDiagnosticAnswers">updateDiagnosticAnswers</string>
+    <string name="api_getDiagnosticReport">getDiagnosticReport</string>
+    <string name="api_getDiagnsticReportSubGraph">getDiagnsticReportSubGraph</string>
+
+
+    <!--<string name="api_updateTribeometerAnswers">updateTribeometerAnswers</string>-->
+    //----------------notification------------------
+    //----------------------COT Api Call List----------------------------------------------
+    //----------------SOT API--------------------------------------------------
+    //-----------Dot-----------------
+    //--------------------IOT new---------------------
+    //------------------Customer Support----------------
+    //-------------------------------Personality Type----------------------------------
+    //-----------------------------------------------
+    //------------------------------
+    //--------------Admin
+    ///-------------------triboMeter Api
+    //----------------AppUpdate Status
+    //--------------------Filter---------------
+    //--------------------------------------Update
+    //--------------------Help Menu Text------------------------
+    //------------DOT Help----------------------
+    //---------COT Help-----------------
+    //----------SOT Help------------------------
+    //--------Diagnostices Home HElp-----------------------
+    //--------IOT Hep-----------------
+    //--------Report Help---------------
+    //-----Cot Team Role Help--------------
+    //--------Diagnostices HElp-----------------------
+    //--------Tribeometer HElp-----------------------
+    //--------------COT Function Lens------------------
+    //--------------SOT Culture Lens------------------
+    //-------------Sot Motivation------------------------
+
+
+    <!--///navigation layout String-->
+    <string name="nav_home">Home</string>
+    <string name="nav_know_company">Know company</string>
+    <string name="nav_know_members">Know Members</string>
+    <string name="nav_feedback">Offloading</string>
+    <string name="nav_risk">Risk</string>
+    <string name="nav_customer_support">Support</string>
+    <string name="nav_app_tour">App Tour</string>
+    <string name="nav_logout">Logout</string>
+    <string name="individuals">Individuals</string>
+    <string name="Know">Know</string>
+    <string name="tell_us">Tell Us</string>
+    <string name="amazing_award">"""Amazing""" Award</string>
+    <string name="registering">Registering</string>
+    <string name="organisations_help">Organisations should use Tribe365 to get actionable data around the people in the organisation.</string>
+    <string name="organisation_staff_help">Organisations can range from 1 – 10,000 staff</string>
+    <string name="by_using_tribe365_help">By using Tribe365, staff will be able to interact 24/7 with the companies beliefs, values, vision, mission and focus and understand what it really means to be part of you Tribe every second of every day.</string>
+    <string name="amazing">Amazing</string>
+    <string name="next">NEXT</string>
+    <string name="i_am_not_in_work_today"><u>I"'"m not in work today!</u></string>
+    <string name="please_back_at_work">Please select the dates you aim to be back at work</string>
+    <string name="msg_when_user_present">You currently have daily good day bad day on \'absent\' would you like switch it back to \'present\'?</string>
+    <string name="managed">Managed</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="new_risk">New</string>
+    <string name="out_of_office_mode_enabled"><u>Out of office mode enabled</u></string>
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="no_sentiment_yet">No sentiment yet</string>
+    <string name="amazing_awards_title">Amazing Awards</string>
+    <string name="no_amazing_awards_yet">No amazing awards yet</string>
+    <string name="view_more_title">View More</string>
+    <string name="award">Award</string>
+    <string name="settings_title">Settings</string>
+    <string name="push_notification_title">Push Notification</string>
+    <string name="auto_start_title">Auto Start</string>
+    <!--<string name="auto_start_description">If not receiving notification enable auto start on Tribe365</string>-->
+    <string name="auto_start_description">Please enable Auto Start if you don\'t automatically receive notifications</string>
+    <string name="note">Note:</string>
+    <string name="no_action_added_yet">No action added yet</string>
+    <string name="label">send</string>
+
+
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+</resources>
+

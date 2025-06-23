@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_padding_medium"
+        android:fontFamily="@font/roboto"
+        android:padding="@dimen/activity_padding_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small" />
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:textAlignment="textEnd"
+        android:paddingEnd="@dimen/activity_padding_medium"
+        android:paddingStart="@dimen/activity_padding_medium"
+        android:paddingTop="@dimen/activity_margin_quarter"
+        android:paddingBottom="@dimen/activity_padding_medium"
+        android:textColor="@color/border_color"
+        android:textSize="@dimen/text_size_very_small"
+        tools:ignore="SmallSp" />
+
+    <View
+        android:id="@+id/line_divider_view"
+        android:layout_width="match_parent"
+        android:layout_height=".4dp"
+        android:visibility="gone"
+        android:background="@color/border_color"
+        android:layout_marginStart="@dimen/activity_margin_half"
+        android:layout_marginEnd="@dimen/activity_margin_half"/>
+</LinearLayout>

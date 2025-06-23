@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_white"
+    android:gravity="top"
+    app:cardCornerRadius="5dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_padding_medium"
+        android:orientation="vertical">
+
+    <include layout="@layout/app_bar" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="@dimen/activity_margin_half"
+        android:background="@drawable/card_bg_light_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_mainBlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
+                    android:layout_marginStart="@dimen/activity_margin_half"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="@dimen/activity_margin_quarter">
+
+                        <ImageView
+                            android:id="@+id/iv_dia_logo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="@dimen/activity_padding_medium"
+                            android:src="@drawable/direct" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_dia_notiName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center"
+                        android:layout_marginStart="@dimen/activity_margin_quarter"
+                        android:layout_marginEnd="@dimen/activity_margin"
+                        android:text="notification"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_normal"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_dia_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="@dimen/activity_margin_quarter"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:paddingStart="@dimen/activity_padding_medium"
+                android:paddingEnd="@dimen/activity_padding_medium"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_dia_desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start|center"
+                            android:paddingStart="@dimen/activity_padding_medium"
+                            android:paddingEnd="@dimen/activity_padding_medium"
+                            android:layout_marginStart="@dimen/activity_margin_half"
+                            android:layout_marginEnd="@dimen/activity_margin_half"
+                            android:text=""
+                            android:fontFamily="@font/roboto"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+                </ScrollView>
+
+
+                <TextView
+                    android:id="@+id/tv_dia_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
+                    android:layout_marginBottom="@dimen/activity_margin"
+                    android:layout_marginStart="@dimen/activity_margin_half"
+                    android:layout_marginEnd="@dimen/activity_margin_half"
+                    android:gravity="start|center"
+                    android:paddingStart="@dimen/activity_padding_medium"
+                    android:paddingEnd="@dimen/activity_padding_medium"
+                    android:text=""
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_small" />
+
+                <Button
+                    android:id="@+id/link_dia_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/activity_margin_half"
+                    android:layout_marginEnd="@dimen/activity_margin_half"
+                    android:layout_marginBottom="@dimen/activity_margin_half"
+                    android:background="@drawable/roundedcorner_border_red_solid"
+                    android:gravity="center"
+                    android:text="open link"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_very_small"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

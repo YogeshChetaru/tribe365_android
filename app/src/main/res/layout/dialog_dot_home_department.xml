@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+     android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        tools:ignore="RtlHardcoded">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:fontFamily="@font/roboto"
+                android:text="Select Team"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/text_size_medium"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            android:background="@drawable/close"
+            android:backgroundTint="@color/textcolor"
+            android:contentDescription="@string/app_name"
+            tools:ignore="UnusedAttribute" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_title"
+        android:layout_marginTop="5sp"
+        android:background="@drawable/shape_search"
+        android:orientation="horizontal">
+
+        <SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="-10dp"
+            android:animationCache="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="fill_horizontal"
+            android:hint="Search"
+            android:iconifiedByDefault="false"
+            android:orientation="horizontal"
+            android:textSize="@dimen/text_size_medium"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_search"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <Button
+        android:id="@+id/bt_done"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/rnd_bt_primary"
+        android:fontFamily="@font/roboto"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/done"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_tick"
+        android:visibility="gone" />
+</RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UI.Know.PersonalityType.Act_Personality_type_list">
+
+    <include layout="@layout/app_bar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="personality Type Questions"
+        android:textAllCaps="true"
+        android:textColor="@color/textcolor"
+        android:textSize="@dimen/text_size_big"
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_personality_qustion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit_personality_Qus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingStart="@dimen/activity_margin_content"
+        android:paddingEnd="@dimen/activity_margin_content"
+        android:paddingTop="@dimen/activity_margin_half"
+        android:paddingBottom="@dimen/activity_margin_half"
+        android:layout_margin="10dp"
+        android:background="@drawable/rnd_bt_primary"
+        android:gravity="center"
+        android:text="SUBMIT"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/textcolor"
+        tools:ignore="HardcodedText" />
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_main_ll"
+    android:layout_marginTop="@dimen/activity_padding_medium"
+    android:layout_marginBottom="@dimen/activity_padding_medium"
+    android:layout_marginStart="@dimen/activity_margin_half"
+    android:layout_marginEnd="@dimen/activity_margin_half"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/red">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_padding_half"
+        android:paddingBottom="@dimen/activity_padding_half"
+        android:paddingStart="@dimen/activity_padding_half"
+        android:paddingEnd="@dimen/activity_padding_half"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/row_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/activity_margin_quarter"
+            android:layout_marginBottom="@dimen/activity_margin_quarter"
+            android:fontFamily="@font/roboto_medium"
+            android:textStyle="normal"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

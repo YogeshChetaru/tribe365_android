@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginStart="@dimen/activity_margin"
+    android:layout_marginEnd="@dimen/activity_margin"
+    android:layout_marginTop="@dimen/activity_margin"
+    android:layout_marginBottom="@dimen/activity_margin"
+    android:paddingStart="@dimen/left_right_margin"
+    android:paddingEnd="@dimen/left_right_margin"
+    android:paddingTop="@dimen/activity_margin"
+    android:paddingBottom="@dimen/activity_margin"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/activity_margin_half"
+        android:paddingStart="@dimen/left_right_margin"
+        android:paddingEnd="@dimen/left_right_margin"
+        android:paddingTop="@dimen/activity_margin_half"
+        android:paddingBottom="@dimen/activity_padding_medium"
+        >
+
+        <TextView
+            android:id="@+id/dialog_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Sentiment Index"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_big" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/border_color"
+            android:layout_marginLeft="@dimen/activity_margin_half"
+            android:layout_marginRight="@dimen/activity_margin_half"
+            android:fontFamily="@font/roboto"
+            android:textSize="@dimen/text_size_normal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="@dimen/activity_margin_half"
+            android:layout_gravity="center"
+            tools:ignore="UseCompoundDrawables">
+            <ImageView
+                android:id="@+id/image_face"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/high"
+                android:layout_gravity="end|center_vertical"
+                android:contentDescription="@string/app_name"/>
+
+            <TextView
+                android:id="@+id/hi_value_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="start|center"
+                android:layout_marginStart="@dimen/activity_margin_half"
+                android:layout_marginEnd="@dimen/activity_margin_half"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_very_big" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="UPDATE/REVIEW SUPERCHARGING QUESTIONS"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/text_size_medium"
+            tools:ignore="HardcodedText" />
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="12sp"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:text="@string/st_qus_subtitle"/>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sot_quslist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_sot_qus_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/activity_margin_content"
+        android:paddingEnd="@dimen/activity_margin_content"
+        android:paddingTop="@dimen/activity_margin_half"
+        android:paddingBottom="@dimen/activity_margin_half"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_screen"
+        android:text="UPDATE ANSWERs"
+        android:textSize="@dimen/text_size_medium"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

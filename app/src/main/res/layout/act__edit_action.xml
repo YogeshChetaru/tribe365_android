@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:weightSum="10">
+
+        <include layout="@layout/app_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/add_actions"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/font"
+                android:textSize="@dimen/text_size_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/select_tier"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/tv_selecttier"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="5dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/tv_department"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="RESPONSIBLE DEPARTMENT"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_small"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_department_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="5dp"
+                    android:textSize="@dimen/text_size_normal"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/tv_responsible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="RESPONSIBLE PERSON"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_small"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_responsible_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="5dp"
+                    android:textSize="@dimen/text_size_normal"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Risks"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/text_size_small"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_theme_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto"
+                    android:paddingStart="5dp"
+                    android:textSize="@dimen/text_size_normal"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="START DATE"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_small"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_startdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:textSize="@dimen/text_size_small"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="DUE DATE"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_small"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_duedate"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_size_normal"
+                    android:paddingStart="10dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/status_caps"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/field_back"
+                    android:spinnerMode="dialog"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1.2">
+
+                    <RadioButton
+                        android:id="@+id/rb_complete"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:buttonTint="#45e12d"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Complete"
+                        tools:ignore="HardcodedText,UnusedAttribute" />
+
+                    <RadioButton
+                        android:id="@+id/rb_started"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:buttonTint="#cf9a20"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Started"
+                        tools:ignore="HardcodedText,UnusedAttribute" />
+
+                    <RadioButton
+                        android:id="@+id/rb_notstarted"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:buttonTint="#b32020"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Not Started"
+                        tools:ignore="HardcodedText,UnusedAttribute" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/description_caps"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="@dimen/text_size_small" />
+
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:background="@drawable/rect_border_black"
+                    android:gravity="top"
+                    android:textSize="@dimen/text_size_normal"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+                <Button
+                    android:id="@+id/bt_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:background="@drawable/rnd_bt_primary"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:text="@string/submit"
+                    android:textColor="@color/textcolorsecondary"
+                    android:textSize="@dimen/text_size_medium" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="@dimen/activity_padding_medium"
+    android:background="@drawable/card_bg_light_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_padding_medium"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_Question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="@dimen/text_size_medium"
+            android:text="Question"
+            android:textColor="@color/textcolor" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/border_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_opt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option 01"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/textcolor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt1_0"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="0" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt1_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt1_2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="2" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt1_3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="3" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt1_4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="4" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt1_5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="5" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:layout_marginBottom="5dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="5dp"-->
+
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:background="@color/border_color" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_opt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option 02"
+                    android:textSize="@dimen/text_size_normal"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/textcolor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt2_0"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="0" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt2_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="1" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt2_2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="2" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt2_3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="3" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt2_4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="4" />
+
+                    <TextView
+                        android:id="@+id/tv_sot_opt2_5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:background="@drawable/shape_rect_white_blackborder"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_normal"
+                        android:text="5" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

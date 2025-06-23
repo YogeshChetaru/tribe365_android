@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/activity_margin"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:background="@drawable/card_bg_light_white">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/activity_margin_half">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_margin_half"
+        android:layout_marginEnd="@dimen/activity_margin_half"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_margin_half"
+            android:textColor="@color/red"
+            android:padding="@dimen/activity_margin_half"
+            android:textSize="@dimen/text_size_big"
+            android:text="@string/please_back_at_work"
+            android:fontFamily="@font/roboto_medium"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/activity_margin_half"
+            android:layout_gravity="center"
+            android:background="@drawable/login_edit_rectange_bg"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:includeFontPadding="false"
+                android:nextFocusDown="@+id/et_password"
+                android:padding="12dp"
+                android:clickable="false"
+                android:fontFamily="@font/roboto"
+                android:singleLine="true"
+                android:text="Start Date: "
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/border_color"
+                android:textSize="@dimen/text_size_normal"
+                tools:ignore="Autofill,UnusedAttribute" />
+        <TextView
+            android:id="@+id/start_date_et"
+            android:layout_width="0dp"
+            android:layout_weight=".6"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableEnd="@drawable/calender_small"
+            android:drawablePadding="@dimen/activity_margin_content"
+            android:gravity="start|center"
+            android:includeFontPadding="false"
+            android:nextFocusDown="@+id/et_password"
+            android:padding="12dp"
+            android:clickable="false"
+            android:fontFamily="@font/roboto"
+            android:singleLine="true"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorHint="@color/border_color"
+            android:textSize="@dimen/text_size_normal"
+            tools:ignore="Autofill,UnusedAttribute" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_margin_half"
+            android:background="@drawable/login_edit_rectange_bg"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".4"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start|center"
+                android:includeFontPadding="false"
+                android:nextFocusDown="@+id/et_password"
+                android:padding="12dp"
+                android:clickable="false"
+                android:fontFamily="@font/roboto"
+                android:singleLine="true"
+                android:text="End Date: "
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/border_color"
+                android:textSize="@dimen/text_size_normal"
+                tools:ignore="Autofill,UnusedAttribute" />
+            <TextView
+                android:id="@+id/end_date_et"
+                android:layout_width="0dp"
+                android:layout_weight=".6"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableEnd="@drawable/calender_small"
+                android:drawablePadding="@dimen/activity_margin_content"
+                android:gravity="start|center"
+                android:includeFontPadding="false"
+                android:nextFocusDown="@+id/et_password"
+                android:padding="12dp"
+                android:clickable="false"
+                android:fontFamily="@font/roboto"
+                android:singleLine="true"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textColorHint="@color/border_color"
+                android:textSize="@dimen/text_size_normal"
+                tools:ignore="Autofill,UnusedAttribute" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="50dp"
+        android:paddingTop="@dimen/activity_margin"
+        android:paddingBottom="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:paddingEnd="50dp"
+        android:background="@drawable/sign_rnd_button"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="@dimen/text_size_medium"
+        android:text="@string/submit"
+        android:textColor="@color/white" />
+</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpandableLinearLayout">
+        <attr name="expandDuration" format="integer" />
+    </declare-styleable>
+    <attr name="primary_app_color" format="reference|color" />
+</resources>

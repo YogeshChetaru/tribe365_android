@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_tribeometer_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/light_gry"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/chartT"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_margin="10dp" />
+
+            <TextView
+                android:id="@+id/tv_tribometer_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:text="Back"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_small"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_tribometer_subgraph_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:fontFamily="@font/roboto"
+                android:text="Back"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_small"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tribometer_graphlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_undo_tribometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rnd_bt_primary"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_medium"
+        android:padding="10dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="REDO/REVIEW QUESTIONNAIRE"
+        android:textAllCaps="true"
+        android:textColor="@color/textcolor" />
+
+    <LinearLayout
+        android:id="@+id/ll_tribeometer_msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/roboto"
+            android:text="@string/no_records_found"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+

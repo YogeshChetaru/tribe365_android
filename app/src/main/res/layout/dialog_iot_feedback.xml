@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00A86868"
+        android:padding="10dp">
+
+        <TextView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/app_icon"
+            android:visibility="gone" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:background="#eeeeee"
+            android:src="@drawable/app_icon" />
+
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/icon"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:fontFamily="@font/roboto"
+            android:text="Tribe365"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/text_size_very_big"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/titleTxt"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/msgqueTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto"
+                    android:scrollbars="vertical"
+                    android:text="How's things at \n work today?"
+                    android:textColor="@color/navigationBarColor"
+                    android:textSize="@dimen/text_size_big" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"/>
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/scroll"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/happy"
+                android:layout_width="30dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/happy"
+                android:textSize="@dimen/text_size_big" />
+
+            <ImageView
+                android:id="@+id/neutral"
+                android:layout_width="30dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/neutral"
+                android:textSize="@dimen/text_size_big" />
+
+            <ImageView
+                android:id="@+id/sad"
+                android:layout_width="30dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:src="@drawable/sad"
+                android:textSize="@dimen/text_size_big" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/notTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Prefer Not To Answer"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_small"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+    <dimen name="slide_title">30dp</dimen>
+
+
+    <dimen name="left_right_margin">40dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    //-------------------------------cot
+    <string name="roboto_light">sans-serif-light</string>
+
+    <string name="number_picker_formatter">%2d</string>
+    <dimen name="text_size">15dp</dimen>
+    <dimen name="selected_text_size">20dp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="activity_margin_12">12dp</dimen>
+    <dimen name="activity_padding_half">8dp</dimen>
+    <dimen name="activity_padding_medium">4dp</dimen>
+    <dimen name="activity_margin_quarter">2dp</dimen>
+    <dimen name="activity_margin_small">1dp</dimen>
+    <dimen name="activity_margin_content">24dp</dimen>
+    <dimen name="activity_margin_big">48dp</dimen>
+    <dimen name="activity_margin_half">8dp</dimen>
+    <dimen name="activity_margin_very_big">60dp</dimen>
+    <dimen name="activity_margin_very_very_big">90dp</dimen>
+
+    <dimen name="paddingItemDecorationEdge">24dp</dimen>
+
+    <dimen name="item_offset_small">2dp</dimen>
+    <dimen name="item_offset_very_small">1sp</dimen>
+    <dimen name="item_small">.5dp</dimen>
+    <dimen name="radius_corner">30</dimen>
+    <dimen name="elevation">5</dimen>
+
+    <dimen name="showcase_radius">40dp</dimen>
+    <dimen name="showcase_radius_inner">50dp</dimen>
+    <dimen name="showcase_radius_outer">60dp</dimen>
+
+    <!--<dimen name="design_bottom_navigation_active_item_max_width" tools:override="true">600dp</dimen>-->
+
+    <dimen name="text_size_very_small">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_big">18sp</dimen>
+    <dimen name="text_size_very_big">20sp</dimen>
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    android:background="@drawable/card_bg_light_white"
+    android:layout_margin="@dimen/activity_padding_half"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tv_diagnostics_qus_no"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="top|center"
+                    android:gravity="top|center"
+                    android:padding="5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="1"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+                    android:id="@+id/tv_diagnostics_qus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Question "
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_padding_half">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:gravity="start|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_diagnostics_opt_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/shape_color_normal"
+                        android:layout_margin="@dimen/activity_padding_medium"
+                        android:padding="@dimen/padding_10"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Not At All"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_small" />
+
+
+                    <TextView
+                        android:id="@+id/tv_diagnostics_opt_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/shape_color_normal"
+                        android:layout_margin="@dimen/activity_padding_medium"
+                        android:padding="@dimen/padding_10"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Slightly"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_small" />
+
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginBottom="@dimen/activity_padding_medium"
+                    android:background="@color/border_color" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
+                    android:layout_marginBottom="@dimen/activity_padding_medium"
+                    android:layout_gravity="start|center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_diagnostics_opt_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/shape_color_normal"
+                        android:layout_margin="@dimen/activity_padding_medium"
+                        android:padding="@dimen/padding_10"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Moderately"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_small" />
+
+                    <TextView
+                        android:id="@+id/tv_diagnostics_opt_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/shape_color_normal"
+                        android:layout_marginStart="@dimen/activity_padding_medium"
+                        android:layout_marginEnd="@dimen/activity_padding_medium"
+                        android:layout_marginTop="@dimen/activity_padding_medium"
+                        android:layout_marginBottom="@dimen/activity_padding_medium"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:padding="@dimen/padding_10"
+                        android:text="Very"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_small" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
+                    android:layout_marginBottom="@dimen/activity_padding_medium"
+                    android:layout_gravity="start|center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_diagnostics_opt_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="@drawable/shape_color_normal"
+                        android:padding="@dimen/padding_10"
+                        android:fontFamily="@font/roboto_medium"
+                        android:layout_marginStart="@dimen/activity_padding_medium"
+                        android:layout_marginEnd="@dimen/activity_padding_medium"
+                        android:layout_marginTop="@dimen/activity_padding_medium"
+                        android:layout_marginBottom="@dimen/activity_padding_medium"
+                        android:text="Extremely"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textcolor"
+                        android:textSize="@dimen/text_size_small" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

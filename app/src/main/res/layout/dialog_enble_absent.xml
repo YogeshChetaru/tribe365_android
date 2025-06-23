@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/activity_margin"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:background="@drawable/card_bg_light_white"
+    tools:ignore="MissingClass">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/activity_margin"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/activity_margin"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:padding="@dimen/activity_margin_half"
+            android:textSize="@dimen/text_size_very_big"
+            android:text="Ready to resume work?"
+            android:fontFamily="@font/roboto_medium"/>
+
+        <TextView
+            android:id="@+id/tv_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="50dp"
+            android:paddingTop="@dimen/activity_margin_12"
+            android:paddingBottom="@dimen/activity_margin_12"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:paddingEnd="50dp"
+            android:background="@drawable/sign_rnd_button"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="@dimen/text_size_medium"
+            android:text="DISABLE"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="autosize_text_sizes">
+        <item>6sp</item>
+        <item>8sp</item>
+        <item>10sp</item>
+        <item>12sp</item>
+        <item>14sp</item>
+        <item>15sp</item>
+        <item>17sp</item>
+        <item>18sp</item>
+        <item>19sp</item>
+        <item>20sp</item>
+    </array>
+    <string-array name="reply_choices">
+        <item>Yes</item>
+        <item>Maybe</item>
+        <item>No</item>
+    </string-array>
+</resources>

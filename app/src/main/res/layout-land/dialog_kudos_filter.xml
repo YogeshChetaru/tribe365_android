@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_padding_half"
+    android:layout_marginTop="@dimen/activity_padding_half"
+    android:layout_marginStart="@dimen/activity_margin_very_big"
+    android:layout_marginEnd="@dimen/activity_margin_very_big"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+          <androidx.cardview.widget.CardView
+    android:orientation="vertical"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="15dp"
+    android:layout_marginTop="@dimen/activity_margin"
+    android:layout_marginBottom="@dimen/activity_margin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:id="@+id/top_main_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/activity_margin_half"
+                android:paddingEnd="@dimen/activity_margin_half"
+                android:paddingTop="@dimen/activity_padding_medium"
+                android:layout_marginBottom="@dimen/activity_margin_half"
+                android:background="@color/bg_white"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_margin_half"
+                    android:layout_marginTop="@dimen/activity_margin_half"
+                    android:layout_marginEnd="@dimen/activity_margin_half"
+                    android:layout_marginBottom="@dimen/activity_margin_half"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/activity_margin_quarter"
+                    android:paddingEnd="@dimen/activity_margin_quarter">
+
+                    <ImageView
+                        android:id="@+id/top_left_image_click"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="start"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_arrow_back_black" />
+
+                    <TextView
+                        android:id="@+id/kudos_top_title_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_big"
+                         />
+
+                    <ImageView
+                        android:id="@+id/top_next_image_click"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_arrow_next_24" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_margin_half"
+                    android:layout_marginTop="@dimen/activity_margin_half"
+                    android:layout_marginEnd="@dimen/activity_margin_half"
+                    android:layout_marginBottom="@dimen/activity_margin_half"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/activity_margin_quarter"
+                    android:paddingEnd="@dimen/activity_margin_quarter">
+
+                    <ImageView
+                        android:id="@+id/previous_image_click"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="start"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_arrow_back_black" />
+
+                    <TextView
+                        android:id="@+id/kudos_title_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_big"
+                        />
+
+                    <ImageView
+                        android:id="@+id/next_image_click"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="end|center_vertical"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_arrow_next_24" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/activity_padding_medium"
+                    android:layout_marginEnd="@dimen/activity_padding_medium"
+                    android:background="@color/border_color"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin_half"
+                android:layout_marginEnd="@dimen/activity_margin_half"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_kudos_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_margin_half"
+                    android:paddingBottom="@dimen/activity_margin_quarter" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bottom_ll"
+        android:layout_below="@+id/top_main_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:gravity="bottom|center_horizontal"
+        android:background="@color/red"
+        android:visibility="gone"
+        android:paddingTop="@dimen/activity_padding_medium"
+        android:paddingBottom="@dimen/activity_padding_medium"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingEnd="@dimen/activity_margin">
+        <TextView
+            android:id="@+id/tv_Amazing_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/activity_padding_medium"
+            android:padding="@dimen/activity_margin_half"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@string/amazing"
+            android:fontFamily="@font/roboto_medium"
+            android:visibility="visible"
+            android:layout_gravity="center|start"
+            android:gravity="center|start"
+            />
+        <TextView
+            android:id="@+id/tv_amazing_value"
+            android:layout_width="0dp"
+            android:padding="@dimen/activity_margin_half"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginEnd="@dimen/activity_padding_medium"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="visible"
+            android:layout_gravity="center|end"
+            android:gravity="center|end"
+            />
+    </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginEnd="@dimen/activity_margin_quarter"
+android:layout_marginStart="@dimen/activity_padding_medium"
+android:orientation="vertical"
+android:layout_gravity="end"
+android:gravity="end|center"
+android:background="@color/transparent">
+<TextView
+    android:id="@+id/award_image"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:visibility="gone"
+    android:background="@drawable/awards"
+    android:padding="@dimen/activity_padding_medium"
+    android:layout_marginEnd="@dimen/activity_padding_medium"
+    android:layout_marginTop="@dimen/activity_margin"
+    android:layout_marginBottom="@dimen/activity_padding_half"
+    android:layout_gravity="end|center"/>
+
+</LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

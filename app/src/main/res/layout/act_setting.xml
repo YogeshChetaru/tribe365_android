@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    tools:context=".UI.Setting.Act_Setting">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_padding_medium"
+            android:layout_marginEnd="@dimen/activity_padding_medium"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:layout_marginBottom="@dimen/activity_margin_quarter"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_top_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start|center_vertical"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/black"
+                android:contentDescription="@string/tribe_365"
+                android:paddingTop="@dimen/activity_padding_half"
+                android:scaleType="fitStart"
+                android:src="@drawable/ic_arrow_back_black"
+                android:visibility="visible"
+                tools:ignore="VectorDrawableCompat"
+                tools:targetApi="lollipop" />
+            <ImageView
+                android:id="@+id/tribe365"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="@dimen/activity_margin_quarter"
+                android:layout_marginEnd="@dimen/activity_margin_quarter"
+                android:layout_weight="4"
+                android:layout_gravity="start|center"
+                android:contentDescription="@string/tribe_365"
+                android:paddingTop="@dimen/activity_padding_medium"
+                android:paddingBottom="@dimen/activity_padding_medium"
+                android:paddingEnd="@dimen/activity_margin_quarter"
+                android:paddingStart="@dimen/activity_margin_quarter"
+                android:scaleType="fitStart"
+                android:src="@drawable/app_icon" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/edit_bg"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/activity_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/settings_title"
+                android:textAlignment="textStart"
+                android:textColor="@color/red"
+                android:textSize="@dimen/text_size_big" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                app:cardCornerRadius="10dp"
+                android:layout_gravity="center"
+                android:outlineSpotShadowColor="@color/white"
+                android:background="@drawable/card_bg_light_white"
+                app:cardElevation="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_padding_medium"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin_half"
+                        android:layout_marginEnd="@dimen/activity_margin_half"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:padding="@dimen/activity_padding_medium"
+                        android:text="@string/push_notification_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_notification"
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="10dp"
+                        android:checked="false"
+                        android:gravity="end|center"
+                        android:theme="@style/SwitchCompatTheme"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                app:cardCornerRadius="10dp"
+                android:layout_gravity="center"
+                android:outlineSpotShadowColor="@color/white"
+                android:background="@drawable/card_bg_light_white"
+                app:cardElevation="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_padding_medium"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/activity_margin_quarter"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/activity_margin_half"
+                            android:layout_marginEnd="@dimen/activity_margin_half"
+                            android:fontFamily="@font/roboto_medium"
+                            android:padding="@dimen/activity_margin_quarter"
+                            android:text="@string/auto_start_title"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/activity_margin_half"
+                            android:layout_marginEnd="@dimen/activity_margin_half"
+                            android:fontFamily="@font/roboto"
+                            android:padding="@dimen/activity_margin_quarter"
+                            android:text="@string/auto_start_description"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_small" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/auto_start_image"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/setting_red"
+                        android:padding="@dimen/activity_padding_medium"
+                        android:layout_marginEnd="@dimen/activity_padding_medium"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/app_name"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:outlineSpotShadowColor="@color/white"
+                android:background="@drawable/card_bg_light_white"
+                app:cardElevation="5dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_padding_medium"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin_half"
+                        android:layout_marginEnd="@dimen/activity_margin_half"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_medium"
+                        android:padding="@dimen/activity_padding_medium"
+                        android:text="@string/note"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_medium" />
+                        <ImageView
+                            android:id="@+id/expand_image"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="@dimen/activity_margin_half"
+                            android:contentDescription="@string/app_name"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/expand_note_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        android:layout_margin="@dimen/activity_margin"
+                        android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:padding="@dimen/activity_padding_medium"
+                        android:text="If you are not getting notification yet."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+                        <TextView
+                            android:id="@+id/open_setting_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:padding="@dimen/activity_padding_medium"
+                            android:visibility="visible"
+                            android:text="\u25CF Open app Setting"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_medium"
+                            android:layout_gravity="center"
+                            />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:padding="@dimen/activity_padding_medium"
+                        android:visibility="gone"
+                        android:text="\u25CF Do not Disturb or Airplane Mode is turned on.
+                        \n\u25CF Either system or app notification disabled.
+                        \n\u25CF Power or data setting are preventing apps from retrieving notification alerts.
+                        \n\u25CF Outdated apps or OS software can cause apps to freeze or cash and not deliver notifications."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+                    <TextView
+                        android:id="@+id/link_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="\u25CF Check others link"
+                        android:autoLink="web"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium"
+                        android:fontFamily="@font/roboto"
+                        android:layout_gravity="center"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </LinearLayout>
+    <include
+        layout="@layout/item_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/sv_add_organisation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <LinearLayout
+                android:id="@+id/ll_dot_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/activity_padding_medium"
+                  >
+
+                    <LinearLayout
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="4"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/tribe365"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_gravity="start|center"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/tribe_365"
+                            android:padding="4dp"
+                            app:srcCompat="@drawable/icon_tribe365" />
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="5dp"
+                        android:contentDescription="@string/chetaru_logo"
+                        android:textAlignment="viewEnd" />
+
+                    <RelativeLayout
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="3">
+
+
+                        <ImageView
+                            android:id="@+id/iv_edit"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="40dp"
+                            android:contentDescription="@string/app_name"
+                            android:padding="3dp"
+                            android:src="@drawable/icon_edit_red" />
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_dot_help"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/iv_help"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="3dp"
+                                android:src="@drawable/ic_help" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border_color_opacity" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_margin"
+                    android:layout_marginStart="@dimen/activity_margin_big"
+                    android:layout_marginEnd="@dimen/activity_margin_big"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginBottom="1dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/vision_caps"
+                                    android:textColor="@color/textcolor"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:textStyle="normal" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone"
+                                    tools:ignore="RtlHardcoded">
+
+                                    <ImageView
+                                        android:id="@+id/iv_add_evidence_vission"
+                                        android:layout_width="30dp"
+                                        android:layout_height="20dp"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="5dp"
+                                        android:src="@drawable/img_red_plus"
+                                        tools:ignore="TooDeepLayout" />
+
+
+                                    <View
+                                        android:layout_width="0.5dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/gry" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_evidence_vission"
+                                        android:layout_width="30dp"
+                                        android:layout_height="20dp"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="3dp"
+                                        android:src="@drawable/img_red_eyes" />
+
+                                </LinearLayout>
+                                <!--<TextView-->
+                                <!--android:id="@+id/tv_evidence_vission"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_alignParentTop="true"-->
+                                <!--android:layout_alignParentEnd="true"-->
+                                <!--android:background="@drawable/buttons_beliefs"-->
+                                <!--android:gravity="right"-->
+                                <!--android:paddingLeft="12dp"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!---->
+                                <!--android:paddingRight="12dp"-->
+                                <!--android:paddingBottom="5dp"-->
+                                <!--android:text="EVIDENCE"-->
+                                <!--android:textColor="@color/textcolor"-->
+                                <!--android:textSize="10dp" />-->
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:id="@+id/tv_vision"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/rounded_corner_light_border"
+                                android:gravity="center_vertical"
+                                android:fontFamily="@font/roboto"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="20dp"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/text_size_medium" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/font"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            android:weightSum="1">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/mission_caps"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:textColor="@color/textcolor"
+                                    android:textStyle="normal" />
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/tv_mission_evidence"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_alignParentTop="true"-->
+                                <!--android:layout_alignParentEnd="true"-->
+                                <!--android:background="@drawable/buttons_beliefs"-->
+                                <!--android:gravity="right"-->
+                                <!--android:paddingLeft="12dp"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!--android:paddingRight="12dp"-->
+                                <!--android:paddingBottom="5dp"-->
+                                <!--android:text="EVIDENCE"-->
+                                <!--android:textColor="@color/textcolor"-->
+                                <!--android:textSize="10dp" />-->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone"
+                                    tools:ignore="RtlHardcoded">
+
+                                    <ImageView
+                                        android:id="@+id/iv_add_mission_evidence"
+                                        android:layout_width="30dp"
+                                        android:layout_height="20dp"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="5dp"
+                                        android:src="@drawable/img_red_plus" />
+
+                                    <View
+                                        android:layout_width="0.5dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/gry" />
+
+
+                                    <ImageView
+                                        android:id="@+id/iv_mission_evidence"
+                                        android:layout_width="30dp"
+                                        android:layout_height="20dp"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="3dp"
+                                        android:src="@drawable/img_red_eyes" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:id="@+id/tv_mission"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/rounded_corner_light_border"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="20dp"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="20dp"
+                                android:fontFamily="@font/roboto"
+                                android:text=""
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/text_size_medium" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/font"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                    <View
+                        android:id="@+id/finish_view"
+                        android:layout_width=".5dp"
+                        android:layout_height=".5dp"
+                        android:background="@color/white"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/focus_caps"
+                                    android:textSize="@dimen/text_size_medium"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:textColor="@color/textcolor"
+                                    android:textStyle="normal" />
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/tv_focus_evidence"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_alignParentTop="true"-->
+                                <!--android:layout_alignParentEnd="true"-->
+                                <!--android:background="@drawable/buttons_beliefs"-->
+                                <!--android:gravity="right"-->
+                                <!--android:paddingLeft="12dp"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!--android:paddingRight="12dp"-->
+                                <!--android:paddingBottom="5dp"-->
+                                <!--android:text="EVIDENCE"-->
+                                <!--android:textColor="@color/textcolor"-->
+                                <!--android:textSize="10dp" />-->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="right"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone"
+                                    tools:ignore="RtlHardcoded">
+
+                                    <ImageView
+                                        android:id="@+id/iv_add_focus_evidence"
+                                        android:layout_width="30dp"
+                                        android:layout_height="20dp"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="5dp"
+                                        android:src="@drawable/img_red_plus" />
+
+                                    <View
+                                        android:layout_width="0.5dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/gry" />
+
+
+                                    <ImageView
+                                        android:id="@+id/iv_focus_evidence"
+                                        android:layout_width="30dp"
+                                        android:layout_height="20dp"
+                                        android:contentDescription="@string/app_name"
+                                        android:padding="3dp"
+                                        android:src="@drawable/img_red_eyes" />
+
+                                </LinearLayout>
+                            </RelativeLayout>
+
+
+                            <TextView
+                                android:id="@+id/tv_focus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/rounded_corner_light_border"
+                                android:gravity="center_vertical"
+                                android:paddingLeft="10dp"
+                                android:paddingTop="20dp"
+                                android:fontFamily="@font/roboto"
+                                android:paddingRight="10dp"
+                                android:paddingBottom="20dp"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_medium" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/font"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_notfound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="@dimen/text_size_small"
+                        android:text="Belief and values are no available"
+                        android:visibility="gone"
+                        tools:ignore="HardcodedText" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_belief"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/belief_caps"
+                            android:textSize="@dimen/text_size_medium"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/textcolor"
+                            android:textStyle="normal" />
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/tv_belief_evidence"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--android:background="@drawable/buttons_beliefs"-->
+                        <!--android:gravity="right"-->
+                        <!--android:paddingLeft="12dp"-->
+                        <!--android:paddingTop="5dp"-->
+                        <!--android:paddingRight="12dp"-->
+                        <!--android:paddingBottom="5dp"-->
+                        <!--android:text="EVIDENCE"-->
+                        <!--android:textColor="@color/textcolor"-->
+                        <!--android:textSize="10dp" />-->
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:gravity="right"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            tools:ignore="RtlHardcoded">
+
+                            <ImageView
+                                android:id="@+id/iv_add_belief_evidence"
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="5dp"
+                                android:src="@drawable/img_red_plus"
+                                android:visibility="visible" />
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/gry" />
+
+
+                            <ImageView
+                                android:id="@+id/iv_belief_evidence"
+                                android:layout_width="30dp"
+                                android:layout_height="20dp"
+                                android:padding="3dp"
+                                android:src="@drawable/img_red_eyes" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/activity_margin"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_belief_detailslist"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_margin_half"
+                            android:layout_marginBottom="@dimen/activity_padding_medium"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/activity_margin_half">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/value_caps"
+                            android:textColor="@color/textcolor"
+                            tools:ignore="RelativeOverlap" />
+
+                        <TextView
+                            android:id="@+id/tv_value_evidence"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/rnd_bt_primary"
+                            android:gravity="right"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="4dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="4dp"
+                            android:text="EVIDENCE"
+                            android:textColor="@color/textcolor"
+                            android:textSize="@dimen/text_size_small"
+                            tools:ignore="HardcodedText,RtlHardcoded" />
+                    </RelativeLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_value_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    <include
+        layout="@layout/item_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

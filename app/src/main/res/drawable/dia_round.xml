@@ -1,0 +1,11 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <item tools:ignore="StateListReachable">
+        <shape>
+
+            <solid android:color="@color/white_gry" />
+            <corners android:radius="10dp" />
+
+        </shape>
+    </item>
+
+</selector>

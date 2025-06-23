@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
+    android:layout_margin="@dimen/activity_margin"
+    app:cardCornerRadius="20dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="@dimen/activity_margin_half">
+
+        <TextView
+            android:id="@+id/dialog_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin_half"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_big"
+            />
+        <TextView
+            android:id="@+id/engagment_index"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="@dimen/activity_margin_quarter"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@string/engagement_index" />
+        <LinearLayout
+            android:id="@+id/feedback_score_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:padding="@dimen/activity_margin_quarter"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/activity_margin_quarter"
+            android:layout_marginBottom="@dimen/activity_margin_quarter"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            android:layout_marginStart="@dimen/activity_margin">
+
+
+            <ImageView
+                android:id="@+id/eng_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/app_name"
+                android:adjustViewBounds="true"/>
+
+            <TextView
+                android:id="@+id/eng_score_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/activity_margin_quarter"
+                android:gravity="start|center"
+                android:padding="@dimen/activity_margin_quarter"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/color_green"
+                android:textSize="@dimen/text_size_very_big"
+               />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            android:textColor="@color/textcolor"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            android:textAlignment="textStart"
+            android:gravity="start"
+            android:fontFamily="@font/roboto"
+            android:layout_gravity="start"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@string/tell_us"/>
+        <EditText
+            android:id="@+id/et_comment"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginLeft="@dimen/activity_margin_half"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:layout_marginRight="@dimen/activity_margin_half"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bg_solid_txt_rounded"
+            android:gravity="top"
+            android:fontFamily="@font/roboto"
+            android:hint="@string/offloading_hint"
+            android:padding="@dimen/activity_padding_half"
+            android:textColorHint="@color/offloading_bg"
+            android:textColor="@color/textcolorsecondary"
+            android:textSize="@dimen/text_size_normal"
+            android:imeOptions="actionDone"
+             />
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sign_rnd_button"
+            android:gravity="center"
+            android:visibility="visible"
+            android:layout_marginBottom="@dimen/activity_margin_half"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            android:paddingStart="@dimen/left_right_margin"
+            android:paddingEnd="@dimen/left_right_margin"
+            android:paddingTop="@dimen/activity_margin_half"
+            android:paddingBottom="@dimen/activity_margin_half"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Send"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+             />
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

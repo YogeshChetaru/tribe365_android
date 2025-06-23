@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+        <LinearLayout
+            android:id="@+id/circle_image_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin_quarter"
+            android:layout_marginEnd="@dimen/activity_margin_quarter"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="@dimen/activity_padding_medium">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/user_image_cmp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/user_circle"
+                        app:civ_border_width="1dp" />
+
+                    <ImageView
+                        android:id="@+id/cron_image"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignStart="@id/user_image_cmp"
+                        android:layout_alignTop="@id/user_image_cmp"
+                        android:layout_marginStart="-10dp"
+                        android:layout_marginTop="-10dp"
+                        android:contentDescription="@string/app_name"
+                        android:forceHasOverlappingRendering="true"
+                        android:foregroundGravity="top|fill"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_crown_multi"
+                        tools:targetApi="n" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/activity_padding_medium"
+                android:layout_marginStart="@dimen/activity_padding_medium"
+                android:paddingStart="@dimen/activity_padding_medium"
+                android:paddingEnd="@dimen/activity_padding_medium"
+                tools:ignore="RtlSymmetry">
+
+                <TextView
+                    android:id="@+id/user_name_cmp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal"
+                     />
+
+                <TextView
+                    android:id="@+id/tv_value_cmp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_weight=".5"
+                    android:layout_marginTop="@dimen/activity_padding_half"
+                    android:layout_marginEnd="@dimen/activity_padding_half"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_normal"
+                     />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height=".5dp"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingEnd="@dimen/activity_margin"
+        android:background="@color/border_color"
+        android:layout_marginTop="@dimen/activity_padding_medium"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginEnd="@dimen/activity_padding_medium"/>
+
+
+
+
+</LinearLayout>

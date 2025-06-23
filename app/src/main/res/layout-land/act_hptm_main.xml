@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    tools:context=".UI.HPTM.Act_HPTM_main">
+
+
+    <LinearLayout
+        android:id="@+id/main_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/activity_padding_medium"
+            android:layout_marginTop="@dimen/activity_padding_medium"
+            android:layout_marginEnd="@dimen/activity_padding_medium"
+            android:layout_marginBottom="@dimen/activity_margin_quarter"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight=".7">
+
+                <ImageView
+                    android:id="@+id/iv_top_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:adjustViewBounds="true"
+                    android:backgroundTint="@color/black"
+                    android:contentDescription="@string/tribe_365"
+                    android:paddingTop="@dimen/activity_padding_half"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_arrow_back_black"
+                    android:visibility="visible"
+                    tools:ignore="VectorDrawableCompat"
+                    tools:targetApi="lollipop" />
+
+                <ImageView
+                    android:id="@+id/tribe365"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="@dimen/activity_margin_quarter"
+                    android:layout_marginEnd="@dimen/activity_margin_quarter"
+                    android:layout_weight="4"
+                    android:contentDescription="@string/tribe_365"
+                    android:paddingStart="@dimen/activity_margin_quarter"
+                    android:paddingTop="@dimen/activity_padding_medium"
+                    android:paddingEnd="@dimen/activity_margin_quarter"
+                    android:paddingBottom="@dimen/activity_padding_medium"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/app_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/feedback_score_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/activity_padding_medium"
+                android:layout_marginStart="@dimen/activity_padding_medium"
+                android:gravity="center|end"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_padding_medium">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="end"
+                    android:paddingStart="@dimen/activity_padding_medium"
+                    android:paddingTop="@dimen/activity_padding_medium"
+                    android:paddingEnd="@dimen/activity_margin_quarter"
+                    android:paddingBottom="@dimen/activity_padding_medium"
+                    android:text="HPTM"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/text_size_medium"
+                     />
+
+                <TextView
+                    android:id="@+id/tv_hptm_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingStart="@dimen/activity_margin_quarter"
+                    android:paddingTop="@dimen/activity_padding_medium"
+                    android:paddingEnd="@dimen/activity_padding_medium"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/activity_padding_medium"
+                    android:text=""
+                    android:fontFamily="@font/roboto_medium"
+                    android:autoSizeMaxTextSize="@dimen/text_size_medium"
+                    android:autoSizeMinTextSize="@dimen/text_size_very_small"
+                    app:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_medium"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:background="@color/border_color_opacity" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:layout_marginBottom="45dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_margin"
+                    android:background="@drawable/edit_text_card_rounded"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/activity_margin_half"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/activity_padding_medium">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/activity_padding_medium"
+                            android:layout_marginTop="@dimen/activity_margin_quarter"
+                            android:layout_marginEnd="@dimen/activity_padding_medium"
+                            android:layout_marginBottom="@dimen/activity_margin_quarter"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/activity_padding_medium"
+                                android:layout_marginTop="@dimen/activity_margin_half"
+                                android:layout_marginEnd="@dimen/activity_margin_half"
+                                android:layout_marginBottom="@dimen/activity_margin_half"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="The 4 HPTM Principles"
+                                android:textAlignment="textStart"
+                                android:textColor="@color/textcolor"
+                                android:textSize="@dimen/text_size_big" />
+
+                            <ImageView
+                                android:id="@+id/principle_imageview"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:backgroundTint="@color/border_color"
+                                android:contentDescription="@string/app_name"
+                                android:padding="@dimen/activity_padding_medium"
+                                android:src="@drawable/ic_arrow_right_black" />
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_main_block"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/activity_margin"
+                    android:layout_marginEnd="@dimen/activity_margin"
+                    android:layout_marginBottom="@dimen/activity_padding_medium"
+                    android:fontFamily="@font/roboto_medium"
+                    android:paddingStart="@dimen/activity_margin_half"
+                    android:paddingEnd="@dimen/activity_margin_half"
+                    android:text="Self Learning Checklist"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_margin_half"
+                    android:layout_marginEnd="@dimen/activity_margin_half"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/activity_margin_half"
+                        android:layout_marginTop="@dimen/activity_padding_medium"
+                        android:layout_marginEnd="@dimen/activity_margin_half"
+                        android:layout_marginBottom="@dimen/activity_padding_medium"
+                        app:cardBackgroundColor="@color/bg_white"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:background="@color/bg_white"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <TextView
+                                android:id="@+id/honest_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:ellipsize="none"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/activity_padding_medium"
+                                android:paddingBottom="@dimen/activity_padding_medium"
+                                android:singleLine="true"
+                                android:text="Honest"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/text_size_medium" />
+
+                            <View
+                                android:layout_width=".5dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/activity_margin_half"
+                                android:layout_marginBottom="@dimen/activity_margin_half"
+                                android:background="@color/border_color_opacity" />
+
+
+                            <TextView
+                                android:id="@+id/committed_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_margin="0dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/roboto"
+                                android:background="@color/colorPrimary"
+                                android:ellipsize="none"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/activity_padding_medium"
+                                android:paddingBottom="@dimen/activity_padding_medium"
+                                android:singleLine="true"
+                                android:text="Committed"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_medium" />
+
+
+                            <View
+                                android:layout_width=".5dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/activity_margin_half"
+                                android:layout_marginBottom="@dimen/activity_margin_half"
+                                android:background="@color/border_color_opacity" />
+
+
+                            <TextView
+                                android:id="@+id/directed_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:ellipsize="none"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/activity_padding_medium"
+                                android:paddingBottom="@dimen/activity_padding_medium"
+                                android:singleLine="true"
+                                android:text="Directed"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/text_size_medium" />
+
+                            <View
+                                android:layout_width=".5dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/activity_margin_half"
+                                android:layout_marginBottom="@dimen/activity_margin_half"
+                                android:background="@color/border_color_opacity" />
+
+                            <TextView
+                                android:id="@+id/selfless_txt"
+                                android:layout_width="0dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:ellipsize="none"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/activity_padding_medium"
+                                android:paddingBottom="@dimen/activity_padding_medium"
+                                android:singleLine="true"
+                                android:text="Selfless"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/text_size_medium" />
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_watch_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/activity_margin_half" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

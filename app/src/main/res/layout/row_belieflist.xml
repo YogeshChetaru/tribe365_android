@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lyt_dot_vertical_detailslist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_belief_item"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_colorwhite"
+            android:gravity="center"
+            android:maxLines="2"
+            android:fontFamily="@font/roboto"
+            android:paddingTop="3sp"
+            android:paddingBottom="3sp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_very_small" />
+
+        <TextView
+            android:id="@+id/tv_belief_item_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/text_size_normal"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_new_add_ratingview"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_bubble_rating"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_dot_like"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/bubble_view"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/bg_graph_color"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_dot_add_evidence"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:src="@drawable/ic_dot_gry_plus" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/bg_graph_color" />
+
+        <ImageView
+            android:id="@+id/iv_dot_view_evidence"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="3dp"
+            android:src="@drawable/ic_dot_gry_eyes" />
+    </LinearLayout>
+</LinearLayout>

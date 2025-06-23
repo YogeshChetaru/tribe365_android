@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/app_bar" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/activity_margin_very_big"
+            android:layout_marginEnd="@dimen/activity_margin_very_big">
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="VIEW ACTIONS"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/textcolor"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:id="@+id/spinner_parent_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_spinner">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="70dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginStart="@dimen/activity_padding_medium"
+                    android:layout_marginEnd="@dimen/activity_padding_medium"
+                    android:layout_marginBottom="@dimen/activity_margin_12"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:contentDescription="@string/app_name"
+                    app:borderWidth="0dp"
+                    app:elevation="2dp"
+                    app:srcCompat="@drawable/plus" />
+
+                <TextView
+                    android:id="@+id/tv_error_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto"
+                    android:text="No action found"
+                    android:textColor="@color/textcolor"
+                    android:visibility="gone"
+                    android:textSize="@dimen/text_size_normal"
+                    tools:ignore="HardcodedText" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <include
+        layout="@layout/item_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

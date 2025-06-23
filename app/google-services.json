@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "314211936403",
+    "firebase_url": "https://tribe365-55f2c.firebaseio.com",
+    "project_id": "tribe365-55f2c",
+    "storage_bucket": "tribe365-55f2c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314211936403:android:add62db19a5f5f7a",
+        "android_client_info": {
+          "package_name": "com.chetaru.tribe365"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314211936403-28v7iofg7in1v18ao9a89et25r80lk51.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chetaru.tribe365",
+            "certificate_hash": "09c9c3c0b66e625f86a25f2ef02bd8b830dbe416"
+          }
+        },
+        {
+          "client_id": "314211936403-ggoo3b739gqbpt00h54i0i8ue3ilft2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsTgKagc0ABboOOQwxhv58CM6r07j9aoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314211936403-ggoo3b739gqbpt00h54i0i8ue3ilft2g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "314211936403-8pgag68lqa8m43vj2l8kedlg4tfgc4dn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "chetaru.Tribe365"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314211936403:android:451da787d43ea423b00566",
+        "android_client_info": {
+          "package_name": "com.chetaru.tribe365_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314211936403-ggoo3b739gqbpt00h54i0i8ue3ilft2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsTgKagc0ABboOOQwxhv58CM6r07j9aoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314211936403-ggoo3b739gqbpt00h54i0i8ue3ilft2g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "314211936403-8pgag68lqa8m43vj2l8kedlg4tfgc4dn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "chetaru.Tribe365"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    android:layout_margin="@dimen/activity_padding_half">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_padding_half"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="@string/registering"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_big" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="0.5dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            android:background="@color/bg_graph_color"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
+            android:layout_marginStart="@dimen/activity_padding_half"
+            android:layout_marginEnd="@dimen/activity_padding_half"
+            android:gravity="center"
+            android:textColor="@color/textcolor"
+            android:lineSpacingExtra="2dp"
+            android:padding="5dp"
+            android:text="@string/organisations_help"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:textColor="@color/textcolor"
+            android:lineSpacingExtra="2dp"
+            android:text="Logins are issued after organisations have"
+            android:textSize="@dimen/text_size_small" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:textColor="@color/textcolor"
+                android:lineSpacingExtra="2dp"
+                    android:text="signed up via "
+                android:textSize="@dimen/text_size_small" />
+
+            <TextView
+                android:id="@+id/help_web_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:text="www.tribe365.co"
+                android:textColor="@color/back_blue"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/textcolor"
+
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:text="@string/organisation_staff_help"
+            android:textSize="@dimen/text_size_small" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/textcolor"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:padding="5dp"
+            android:text="@string/by_using_tribe365_help"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_small" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

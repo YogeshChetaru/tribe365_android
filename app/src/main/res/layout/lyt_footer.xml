@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backgroundlight_screen"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:fontFamily="@font/roboto"
+            android:layout_marginLeft="45dp"
+            android:textSize="@dimen/text_size_normal"
+            android:text="TOTAL" />
+
+        <TextView
+            android:id="@+id/tv_tot_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="10dp"
+            android:gravity="right"
+            android:fontFamily="@font/roboto"
+            android:textSize="@dimen/text_size_small"
+            android:text="0" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_screen"
+
+        android:paddingStart="@dimen/activity_margin_content"
+        android:paddingEnd="@dimen/activity_margin_content"
+        android:paddingTop="@dimen/activity_margin_half"
+        android:paddingBottom="@dimen/activity_margin_half"
+        android:text="Next Question"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_screen"
+        android:paddingStart="@dimen/activity_margin_content"
+        android:paddingEnd="@dimen/activity_margin_content"
+        android:paddingTop="@dimen/activity_margin_half"
+        android:paddingBottom="@dimen/activity_margin_half"
+        android:fontFamily="@font/roboto"
+        android:text="Submit"
+        android:textSize="@dimen/text_size_medium"
+        android:visibility="gone" />
+
+</LinearLayout>

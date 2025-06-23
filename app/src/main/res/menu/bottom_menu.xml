@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_home_gray"
+        android:title="@string/nav_home" />
+    <item
+        android:id="@+id/nav_know"
+        android:icon="@drawable/nav_know_gray"
+        android:title="@string/Know" />
+
+    <item
+        android:id="@+id/nav_offloading"
+        android:icon="@drawable/nav_offloading_gray"
+        android:title="@string/nav_feedback" />
+    <item
+        android:id="@+id/nav_risk"
+        android:icon="@drawable/risk"
+        android:title="@string/nav_risk" />
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/nav_profile_gray"
+        android:title="@string/nav_profile" />
+</menu>

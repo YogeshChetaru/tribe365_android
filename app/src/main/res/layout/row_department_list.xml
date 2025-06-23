@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tv_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_weight="1.9"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/text_size_medium"
+            android:text="marketing"
+            android:textColor="@color/textcolor" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".10"
+            android:drawableTint="#fff"
+            android:gravity="center_horizontal|center_vertical"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/border_color"
+        android:paddingLeft="5dp">
+
+    </View>
+</LinearLayout>

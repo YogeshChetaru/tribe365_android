@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.chetaru.tribe365_new">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- <uses-feature android:required="true" android:name="android.hardware.type.watch" /> -->
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:name="com.chetaru.tribe365_new.API.retrofit.MyAppContext"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name=".UI.Know.Act_SentimentIndex_Calendar"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Know.Act_Individual_Report"
+            android:exported="false" />
+        <activity
+            android:name=".UI.BasicVersion.BasicHomeActivity"
+            android:exported="true"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!--
+<meta-data android:name="delivery_metrics_exported_to_big_query_enabled"
+            android:value="true" />
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_noti_icon" /> <!-- FCM background Message receiver -->
+        <receiver
+            android:name=".Notification.FcmBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.chetaru.tribe365_new" />
+            </intent-filter>
+        </receiver>
+
+<!--hj-->
+       <!-- <receiver
+            android:name=".Notification.FcmBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>-->
+
+
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorTransparent" /> <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" /> <!-- [END fcm_default_channel] -->
+        <service
+            android:name=".Notification.MyFirebaseMessagingService"
+            android:directBootAware="true"
+            android:exported="true"
+            android:stopWithTask="false"
+            tools:ignore="ExportedService"
+            tools:targetApi="n">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Notification.MyFirebaseInstanceIDService"
+            android:exported="false"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service> <!-- [END firebase_iid_service] -->
+        <activity
+            android:name=".UI.UserInfo.ActLogin"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".UI.Home.Act_Splash"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.Know.Act_Award_List"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Home.Act_AwardDescriptions"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Home.Act_Award"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Risk.Act_RiskAction"
+            android:exported="false"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Risk.Act_RiskHome"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="console.tribe365.co" />
+                <data android:scheme="risk" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.UserInfo.Act_TeamFeedback_Question"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Setting.Act_Setting"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.HPTM.Act_HPTM_main"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Offloading.Act_Ref_HistoryDetail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.Home.Act_FreeVersionHome"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UI.UserInfo.Act_Edit_Profile"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".UI.Know.Member.Act_Member_Home" />
+        <activity android:name=".UI.Know.Act_Know_Home" />
+        <activity
+            android:name=".UI.Home.Act_Home"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Notification.Act_NotificationHandel"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.CustomerSupport.Act_SupportListDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Home.Act_imageShow"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.Know.PersonalityType.Act_Update_Personality_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.Know.PersonalityType.Act_Personality_type_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".Notification.Act_LinkNotification"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.Home.Act_knowMember"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.Home.Act_knowcompany"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.UserInfo.Act_ProfileUser"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".Notification.Act_NotificationList"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.Home.Act_Help"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Home.Actions.Act_ActionList"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Home.Actions.Act_ActionComment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.DOT.Act_DOT_Details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Home.Actions.Act_AddAction_new"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.UserInfo.Act_Forgot_Password"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".UI.Offloading.Act_IOTHome"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".UI.CustomerSupport.Act_CustomerSupport"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".UI.Offloading.Act_History"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Offloading.Act_MsgList"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Offloading.Act_Chat"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".UI.CustomerSupport.Act_SupportChat"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".UI.Offloading.Act_HistoryDetail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.Cot_Individual"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.Cot_Question"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Offloading.Act_ChatImgViewer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.AppTour.Play_Activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".UI.AppTour.Link_click_Activity"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".UI.Know.COT.FunctionalLense.Act_CotDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.FunctionalLense.Act_CotFTeamList"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.FunctionalLense.Act_CotTeamMemDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Home.Actions.Act_Edit_Action"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.Act_Cot_Team_Description"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.FunctionalLense.Act_Fun_QuestionList"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.SOT.Act_SOT_Questionlist"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.SOT.Act_SOT_Update_Questionlist"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.DOT.Act_DOT_staff_List"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Home.Act_Report"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.Diagnostics.Act_Tribeometer_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.Diagnostics.Act_Diagnostics_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.Diagnostics.Act_Update_Diagnostics_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.Diagnostics.Act_Update_Tribeometer_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.Diagnostics.Act_Diagnostics_graph"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.SOT.SOT_Motivation.Act_SOT_Motivation_Individual_graph"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.SOT.SOT_Motivation.Act_SOT_Motivation_Question"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.Update_Cot_Question"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.FunctionalLense.Act_Update_Fun_QuestionList"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.SOT.SOT_Motivation.Act_SOT_Update_Motivation_Question"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.COT.Cot_New_Question"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Know.Diagnostics.Act_Diagnostics_Sub_graph"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

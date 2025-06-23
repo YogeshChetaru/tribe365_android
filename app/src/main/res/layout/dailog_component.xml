@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/colorTransparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/circle_image_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/selected_text_size"
+            android:layout_marginTop="@dimen/slide_title"
+            android:background="@drawable/dia_round"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/activity_padding_medium"
+                android:layout_weight=".4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/dia_user_image_cmp"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    app:civ_border_color="@color/white_gry" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.2"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/activity_padding_medium">
+
+                <TextView
+                    android:id="@+id/dia_user_name_cmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/dia_textcolor"
+                    android:textSize="@dimen/text_size_small" />
+
+                <TextView
+                    android:id="@+id/dia_user_email_cmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:textColor="@color/dia_textcolor"
+                    android:textSize="@dimen/text_size_very_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dia_value_tv_cmp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="120"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_normal"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignLeft="@id/circle_image_ll"
+            android:layout_alignTop="@id/circle_image_ll"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginTop="-20dp"
+            android:contentDescription="crown"
+            android:forceHasOverlappingRendering="true"
+            android:foregroundGravity="top|fill"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_crown_multi" />
+    </RelativeLayout>
+
+
+</LinearLayout>

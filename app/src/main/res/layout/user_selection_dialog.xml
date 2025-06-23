@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/individual_card_view_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    android:background="@drawable/custom_cardview_no_top_shadow"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:layout_marginStart="@dimen/activity_margin"
+    android:layout_marginEnd="@dimen/activity_margin"
+    android:layout_marginTop="@dimen/activity_margin"
+    android:layout_marginBottom="30dp"
+    android:padding="@dimen/activity_padding_half"
+    android:layout_gravity="center_horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_padding_half"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            android:layout_marginEnd="@dimen/activity_padding_medium"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/cancel_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/close"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/activity_margin_half"
+                android:layout_gravity="end"
+                android:contentDescription="@string/app_name"
+                />
+
+            <TextView
+                android:id="@+id/title_individual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin_half"
+                android:layout_marginTop="@dimen/activity_margin_half"
+                android:layout_marginEnd="@dimen/activity_margin_half"
+                android:layout_marginBottom="@dimen/activity_margin_half"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/activity_margin"
+                android:paddingEnd="@dimen/activity_margin"
+                android:text="@string/individuals"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_below="@+id/title_individual"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:alpha=".8"
+                android:background="#C3C0C0"/>
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_below="@+id/title_individual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin_half"
+                android:layout_marginEnd="@dimen/activity_margin_half"
+                android:background="@drawable/search_shape_bg"
+                android:orientation="horizontal">
+
+                <SearchView
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="-10dp"
+                    android:animationCache="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="fill_horizontal"
+                    android:hint="Search"
+                    android:iconifiedByDefault="false"
+                    android:orientation="horizontal"
+                    android:textSize="@dimen/text_size_medium"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_individual"
+                android:layout_below="@+id/ll_search"
+                android:visibility="visible"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin_quarter"
+                android:layout_marginLeft="@dimen/activity_padding_half"
+                android:layout_marginRight="@dimen/activity_padding_half"
+                android:padding="@dimen/activity_padding_half"
+
+                />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fb_select_individual_prevoius"
+                style="@style/Widget.Design.FloatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:visibility="gone"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_margin="16dp"
+                android:elevation="0dp"
+                android:layout_marginStart="@dimen/activity_margin_half"
+                android:layout_marginTop="@dimen/activity_margin_half"
+                android:layout_marginBottom="@dimen/activity_margin_half"
+                app:tint="#FFFFFF"
+                app:srcCompat="@drawable/ic_arrow_back_24"
+                tools:ignore="VectorDrawableCompat"
+                android:contentDescription="@string/app_name"
+                tools:targetApi="lollipop" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/fb_select_individual_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="false"
+                android:visibility="gone"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/white_gry"
+                android:layout_margin="@dimen/activity_padding_medium"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_forword_arrow"/>
+
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/fb_select_amazing_next"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="false"
+                android:visibility="gone"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/white_gry"
+                android:layout_margin="@dimen/activity_padding_medium"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_forword_arrow"/>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+

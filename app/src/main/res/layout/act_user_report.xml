@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:text="Reports"
+                android:textAllCaps="true"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/text_size_big"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:id="@+id/tv_report_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right|center_vertical"
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right|center_vertical"
+                    android:text=", "
+                    android:textColor="@color/textcolor"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_report_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="right|center_vertical"
+                    android:text=""
+                    android:textColor="@color/textcolor"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_date"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="right|center"
+                android:layout_weight="1.5"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_calendar"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_select_user"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/rect_solid_lightwhite_border"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_redplus_circle" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_add_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:text="All Users"
+                android:textColor="@color/textcolor"
+                android:textSize="@dimen/text_size_small"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_reportlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+</LinearLayout>

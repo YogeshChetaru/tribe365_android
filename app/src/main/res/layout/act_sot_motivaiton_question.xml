@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="motivation question"
+            android:textAllCaps="true"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/text_size_big"
+            android:fontFamily="@font/roboto_medium"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/st_sot_motivation_subtitle"
+            android:textColor="@color/textcolor"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sot_motiviation_quslist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_sot_qus_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/activity_margin_content"
+            android:paddingEnd="@dimen/activity_margin_content"
+            android:paddingTop="@dimen/activity_margin_half"
+            android:paddingBottom="@dimen/activity_margin_half"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/button_screen"
+            android:text="Submit"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="@dimen/text_size_normal"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</LinearLayout>

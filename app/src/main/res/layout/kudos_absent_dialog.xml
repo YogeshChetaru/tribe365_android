@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/activity_margin_half"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:background="@drawable/card_bg_light_white"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/activity_padding_medium"
+            android:gravity="end"
+            android:background="@color/red"
+            >
+            <ImageView
+                android:id="@+id/close_image"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center|end"
+                android:layout_margin="@dimen/activity_margin_half"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_cancel"/>
+        </LinearLayout>
+         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:gravity="center"
+                      android:layout_marginTop="@dimen/activity_margin_half"
+                      android:textColor="@color/red"
+                      android:textSize="@dimen/text_size_medium"
+                      android:fontFamily="@font/roboto_medium"
+                      android:text="@string/please_back_at_work"/>
+
+                  <CalendarView
+                      android:id="@+id/calendar_view"
+                    android:layout_width="match_parent"
+                   android:layout_gravity="center"
+                    android:layout_height="wrap_content"/>
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_gravity="center"
+                      android:gravity="center">
+                      <TextView
+                          android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:gravity="center|end"
+                          android:text="End Date :"
+                          android:textAlignment="textEnd"
+                          android:paddingStart="@dimen/activity_padding_medium"
+                          android:paddingEnd="@dimen/activity_padding_medium"
+                          android:textColor="@color/red"
+                          android:textSize="@dimen/text_size_medium"
+                          android:fontFamily="@font/roboto_medium"
+                          />
+                      <TextView
+                          android:id="@+id/show_submit_date_tv"
+                          android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:gravity="center|start"
+                          android:paddingStart="@dimen/activity_padding_medium"
+                          android:paddingEnd="@dimen/activity_padding_medium"
+                          android:textAlignment="textStart"
+                          android:textColor="@color/red"
+                          android:textSize="@dimen/text_size_medium"
+                          android:fontFamily="@font/roboto_medium"
+                          />
+                  </LinearLayout>
+
+
+            </LinearLayout>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_big"
+            android:text="Submit"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
