@@ -69,9 +69,6 @@
 
 
 
-
-
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -162,7 +159,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-
                 <androidx.cardview.widget.CardView
                     android:id="@+id/absent_card_view"
                     android:layout_width="match_parent"
@@ -330,7 +326,7 @@
             app:cardElevation="5dp"
             android:paddingStart="@dimen/activity_padding_half"
             android:paddingEnd="@dimen/activity_padding_half"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginEnd="@dimen/activity_margin"
             android:layout_marginTop="@dimen/activity_padding_half"
@@ -916,7 +912,6 @@
 
 
     </LinearLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"

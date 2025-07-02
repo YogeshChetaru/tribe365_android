@@ -165,6 +165,8 @@ public class Act_IOTHome extends BaseActivity implements View.OnClickListener, P
         ButterKnife.bind(this);
         tv_send = findViewById(R.id.tv_send);
         ref_list=new ArrayList<>();
+
+
         iv_image = findViewById(R.id.iv_image);
         et_comment = findViewById(R.id.et_comment);
         iv_help = findViewById(R.id.iv_help);
@@ -333,6 +335,24 @@ public class Act_IOTHome extends BaseActivity implements View.OnClickListener, P
 
     private void setRef_list(){
 
+        /*for (int i=1;i<10;i++){
+            Reflection newValue = new Reflection();
+            newValue.setmId(i + "");
+            newValue.setmCreated_at("2021-05-03 10:29:53");
+            newValue.setmName("Ritesh Bagul");
+            if(i==1) {
+                newValue.setDescription("Hello  this is first reflection. I am glad to introduce the new module" +
+                        "in Tribe365 need:");
+
+            }else if (i==2){
+                newValue.setDescription("It is high performing team members.");
+            }else if (i==3){
+                newValue.setDescription("Hope this goes Well.");
+            }else {
+                newValue.setDescription("sdfsfsdfsdfsd");
+            }
+            ref_list.add(newValue);
+        }*/
         rv_reflection.setAdapter(new Ad_reflectionList(ref_list, mContext));
 
     }
@@ -429,8 +449,7 @@ public class Act_IOTHome extends BaseActivity implements View.OnClickListener, P
 
             }
         });
-        JsonObject object=Functions.getClient().getJsonMapObject(
-                "message",ref_et_comment.getText().toString().trim(),
+        JsonObject object=Functions.getClient().getJsonMapObject("message",ref_et_comment.getText().toString().trim(),
                 "userId",sessionParam.id,
                 "orgId",sessionParam.orgId,
                 "image", imgBase64);
@@ -685,6 +704,11 @@ public class Act_IOTHome extends BaseActivity implements View.OnClickListener, P
         } catch (Exception e) {
             e.printStackTrace();
         }
+       /* if (que != null) {
+            //dialog_feedback(body,que);
+        } else {
+            // apiGetQuestion();
+        }*/
 
     }
 
@@ -737,7 +761,11 @@ public class Act_IOTHome extends BaseActivity implements View.OnClickListener, P
                 reply_,
                 app_name); //test url
         //live-----------------------
-                app_name); //live url
+//        baseRequest.callAPIgetUserAnswer(1, "http://tellsid.softintelligence.co.uk/index.php/apitellsid/getuseranser/", //live
+//                email_id,
+//                ques_id,
+//                reply_,
+//                app_name); //live url
     }
 
     /*not in use*/
@@ -1032,6 +1060,16 @@ public class Act_IOTHome extends BaseActivity implements View.OnClickListener, P
                         isLastPage = true;
                     }
 
+                /*rv_list.setAdapter(new Ad_historyList(list, mContext, object.toString()));
+                rv_list.setVisibility(View.VISIBLE);
+                if (list.size() > 0) {
+
+                    tv_no_feedback.setVisibility(View.GONE);
+                    rv_list.setVisibility(View.VISIBLE);
+                }else {
+                    tv_no_feedback.setVisibility(View.VISIBLE);
+                    rv_list.setVisibility(View.GONE);
+                }*/
                 }catch (Exception e){
                     e.printStackTrace();
                 }

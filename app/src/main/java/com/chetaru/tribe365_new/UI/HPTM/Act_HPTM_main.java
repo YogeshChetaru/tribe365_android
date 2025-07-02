@@ -522,12 +522,12 @@ public class Act_HPTM_main extends BaseActivity implements View.OnClickListener{
             }
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+              //  utility.showToast(mContext,message);
             }
         });
         JsonObject object = Functions.getClient().getJsonMapObject("","");

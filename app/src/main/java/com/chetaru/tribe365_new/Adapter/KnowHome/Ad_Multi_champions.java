@@ -30,7 +30,9 @@ public class Ad_Multi_champions extends RecyclerView.Adapter<Ad_Multi_champions.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.kudos_champ_list,parent,false);
+       /* LayoutInflater inflater=LayoutInflater.from(mContext);
+        KudosChampListBinding binding=KudosChampListBinding.inflate(inflater,parent,false);*/
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.kudos_champ_list,parent,false);
         return new ViewHolder(view);
     }
 
@@ -63,8 +65,7 @@ public class Ad_Multi_champions extends RecyclerView.Adapter<Ad_Multi_champions.
             if (position == list.size() - 1) {
                 holder.bottomView.setVisibility(View.GONE);
             }
-        }
-        catch (Exception e){
+        }catch (Exception e){
             e.printStackTrace();
         }
 

@@ -657,13 +657,13 @@ public class Act_Edit_Action extends BaseActivity {
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+     //           utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+       //         utility.showToast(mContext, message);
             }
         });
         //companyorgId is used in action only

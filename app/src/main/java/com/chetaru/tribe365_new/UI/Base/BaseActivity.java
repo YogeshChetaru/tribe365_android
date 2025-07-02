@@ -520,10 +520,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
     }
 
     public void getOpenCloseAppStatus() {
-        baseRequest = new BaseRequest(this);
+        /*baseRequest = new BaseRequest(this);
         baseRequest.setBaseRequestListner(new RequestReciever() {
             @Override
             public void onSuccess(int requestCode, String Json, Object object) {
+
             }
 
             @Override
@@ -540,7 +541,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
         );
         Log.d("appStatus", "app status time save in api " + startInteractionDate + " LastInteraction  " + lastInteractionDate);
         baseRequest.callAPIPostWOLoader(1, object, ConstantAPI.userInteractionOnApp);
-
+*/
     }
 
     public void finishAllActivities() {
@@ -897,12 +898,15 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
                 try {
                     JSONObject jsonObject = new JSONObject(object.toString());
                     if (jsonObject.optInt("notificationCount") > 0) {
+                        Log.d("api :-", "updatePushNotificationStatus: "+jsonObject.toString());
                         // tv_notiCount.setText(jsonObject.optInt("notificationCount") + "");
                         countValue = jsonObject.optInt("notificationCount");
                         // finalCount=340;
                        // showBadge(BaseActivity.this,navigationView,R.id.nav_risk,countValue);
 
                     } else {
+                        Log.d("api :-", "updatePushNotificationStatus: "+jsonObject.toString());
+
                         //removeTextLabel(navigationView,R.id.nav_notification);
 //                        api_notificationListUnread();
                     }
@@ -916,13 +920,13 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+              //  utility.showToast(mContext, message);
             }
         });
         JsonObject object = Functions.getClient().getJsonMapObject("userId", userId
@@ -958,6 +962,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
                     Gson gson = new Gson();
                     //JSONArray jsonArray = new JSONArray(object.toString());
                     JSONObject jsonObject= new JSONObject(object.toString());
+                    Log.d("api 22:-", "updatePushNotificationStatus: "+jsonObject.toString());
+
                     String notiStatus= jsonObject.getString("notificationPush");
                     Log.d("NotificationStatus",notiStatus);
                 }catch (Exception e){
@@ -967,12 +973,12 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+               // utility.showToast(mContext,message);
             }
         });
 
@@ -1000,10 +1006,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Notifica
             e.printStackTrace();
         }
 
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "userId", sessionParam.id,
-                "appStatus", appStatus+"",
-                "deviceStatus", deviceStatus+"");
+        JsonObject object = Functions.getClient().getJsonMapObject("userId", sessionParam.id, "appStatus", appStatus+"","deviceStatus", deviceStatus+"");
         baseRequest.callAPIPostWOLoader(1,object, ConstantAPI.api_updatePushNotificationStatus);
     }
 

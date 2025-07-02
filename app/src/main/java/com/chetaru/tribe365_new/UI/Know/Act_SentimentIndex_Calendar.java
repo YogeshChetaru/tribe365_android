@@ -393,12 +393,12 @@ public class Act_SentimentIndex_Calendar extends BaseActivity implements View.On
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+               // utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
         });
         HashMap<String,String> mapValue=new HashMap<>();

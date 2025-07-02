@@ -73,6 +73,8 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
     ArrayList<ModelAddActionUser> modelUserList;
     String userId = "";
     String firstName="",lastName="";
+
+
     Utility utility;
     SessionParam sessionParam;
     private BaseRequest baseRequest;
@@ -93,12 +95,14 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
     @BindView(R.id.no_award_tv)
     TextView no_award_tv;
 
+
+    KudosAwardResponse awardResponse;
     List<KudosAwardList> kudosAwardList= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_award_list);
+        //setContentView(R.layout.act_award_list);
         utility= new Utility();
         sessionParam= new SessionParam(mContext);
         ButterKnife.bind(this);
@@ -156,6 +160,55 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
 
 
 
+    public void setAwardData(){
+       /* KudosAwardList awardList= new KudosAwardList();
+        awardList.setId(1);
+        awardList.setDescription("Fantastic energy and positivity as always Oliver");
+        awardList.setDate("09 Sep 2021,06:12pm");
+        awardList.setUserName("Oliver Randall");
+        kudosAwardList.add(awardList);
+
+        KudosAwardList awardList1= new KudosAwardList();
+        awardList1.setId(2);
+        awardList1.setUserName("Dan Webber");
+        awardList1.setDate("09 sep 2021,06:12pm");
+        awardList1.setDescription("Fantastic energy and positivity as always Dan");
+        kudosAwardList.add(awardList1);
+
+        KudosAwardList awardList2= new KudosAwardList();
+        awardList2.setId(3);
+        awardList2.setUserName("Holly Dickinsin");
+        awardList2.setDate("09 sep 2021,06:12pm");
+        awardList2.setDescription("Fantastic energy and positivity as always Holly");
+        kudosAwardList.add(awardList2);
+
+        KudosAwardList awardList3= new KudosAwardList();
+        awardList3.setId(4);
+        awardList3.setUserName("Oliver Randall");
+        awardList3.setDate("09 sep 2021,06:12pm");
+        awardList3.setDescription("Fantastic energy and positivity as always Oliver");
+        kudosAwardList.add(awardList3);
+
+        KudosAwardList awardList4= new KudosAwardList();
+        awardList4.setId(5);
+        awardList4.setUserName("Dan Webber");
+        awardList4.setDate("09 sep 2021,06:12pm");
+        awardList4.setDescription("Fantastic energy and positivity as always Dan");
+        kudosAwardList.add(awardList4);
+
+        KudosAwardList awardList5= new KudosAwardList();
+        awardList5.setId(6);
+        awardList5.setUserName("Holly Dickinsin");
+        awardList5.setDate("09 sep 2021,06:12pm");
+        awardList5.setDescription("Fantastic energy and positivity as always Holly");
+        kudosAwardList.add(awardList5);*/
+
+
+       /* ad_KudosAward= new Ad_kudosAwardPagination(kudosAwardList,this);
+        rv_kudos_award.setAdapter(ad_KudosAward);*/
+       // ad_KudosAward.addAll(kudosAwardList);
+        ad_KudosAward.notifyDataSetChanged();
+    }
     public void setSessionData(){
         try{
             if(orgId.equals("")){
@@ -181,6 +234,13 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
             @Override
             public void onSuccess(int requestCode, String Json, Object object) {
                 try{
+
+                    /*
+                    *   Gson gson = new Gson();
+                        homeDetail = gson.fromJson(object.toString(), KnowOrgDetails.class);
+                    *  JSONObject jsonObject = new JSONObject(Json);
+                    TOTAL_PAGES = jsonObject.optInt("totalPageCount");
+                    JSONArray jsonArray = new JSONArray(object.toString());*/
 
                     ad_KudosAward.removeLoadingFooter();
                     isLoading= false;
@@ -224,10 +284,22 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
                     kudosAwardList = baseRequest.getDataList(jsonArray, KudosAwardList.class);
 
 
+                   // kudosAwardList= awardResponse.getKudosAwardLists();
 
+                        /*ad_KudosAward.addAll(kudosAwardList);
+                        ad_KudosAward.notifyDataSetChanged();*/
                         if (userId.equals("")) {
+                           /* List<String> userList = new ArrayList<>();
+                            for (int j = 0; j < kudosAwardList.size(); j++) {
+                                for (int k = j; k < kudosAwardList.size(); k++) {
+                                    if (kudosAwardList.get(j).getAwardValue().equals(kudosAwardList.get(k).getAwardValue()) && (kudosAwardList.get(j).getAwardDescription().equals(kudosAwardList.get(k).getAwardDescription()))) {
 
+                                        userList.add(kudosAwardList.get(j).getUserName());
+                                        kudosAwardList.remove(j);
+                                    }
+                                }
 
+                            }*/
                             Map<String, List<KudosAwardList>> map= new HashMap<String, List<KudosAwardList>>();
                             try {
                                // for (int i=0; i<kudosAwardList.size(); i++) {
@@ -241,7 +313,16 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
                                         }
                                         map.get(key).add(awardList);
                                     }
-
+                                   /* for(KudosAwardList awardList : kudosAwardList){
+                                        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd hh:mm a");
+                                        Date d1Key= sdf.parse(awardList.getAwardDate());
+                                        String key= String.valueOf(d1Key);
+                                        if (map.get(key)==null){
+                                            map.put(key,new ArrayList<>());
+                                        }
+                                        map.get(key).add(awardList);
+                                    }*/
+                              //  }
                             }catch (Exception e){
                                 e.printStackTrace();
                             }
@@ -268,8 +349,7 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
                             rv_kudos_award.setAdapter(adapterGroupList);
 
 
-                        }
-                        else {
+                        } else {
 
 
                             if (kudosAwardList.size()>0){
@@ -283,12 +363,16 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
                             }
                         }
 
+
+                    //  JSONObject jsonObject = new JSONObject(Json);
+                   // TOTAL_PAGES = jsonObject.optInt("totalPageCount");
+                    //JSONArray jsonArray = new JSONArray(object.toString());
+
                     if (currentPage <= TOTAL_PAGES)
                         ad_KudosAward.addLoadingFooter();
                     else
                         isLastPage= true;
-                }
-                catch (Exception e){
+                }catch (Exception e){
                     e.printStackTrace();
                 }
             }
@@ -304,8 +388,7 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
             }
         });
 
-        JsonObject object= Functions.getClient().getJsonMapObject(
-                "userId",userId);
+        JsonObject object= Functions.getClient().getJsonMapObject("userId",userId);
         baseRequest.callAPIPost(1,object, ConstantAPI.getKudosAward);
     }
 
@@ -319,7 +402,7 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy, hh:mm aa");
         // sort list based on comparator
         Collections.sort(list, new Comparator<Object>() {
-
+            @SuppressWarnings("unchecked")
             public int compare(Object o1, Object o2) {
                 String keyString= ((Map.Entry<String,List<KudosAwardList>>) o1).getKey();
                 String[] parts = keyString.split("#");
@@ -338,6 +421,9 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
 
                 }
                 return (d1.getTime()> d2.getTime() ? -1 : 1);
+                //return  (firstKey.compareTo(secondKey));
+               /* return ((Map.Entry<String, List<KudosAwardList>>) o1).getKey().compareTo(
+                        ((Map.Entry<String, List<KudosAwardList>>) o2).getKey());*/
             }
         });
 
@@ -382,6 +468,19 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
                     lastName = modelUserList.get(position).getLastName();
                     getAward(userId);
                 }
+               /* if (sessionParam.id.equals(userId)) {
+                    tv_undoMoti.setVisibility(View.VISIBLE);
+
+                } else {
+                    tv_undoMoti.setVisibility(View.GONE);
+                    tv_undo.setVisibility(View.GONE);
+                    tv_undo_personalityType.setVisibility(View.GONE);
+                }
+                btn_personalityType_nrf.setVisibility(View.GONE);
+                allKnowMemberLayout.setVisibility(View.VISIBLE);*/
+
+                //  getAllData(userId, modelUserList.get(position).getName(), modelUserList.get(position).getLastName());
+                /*********** call Api for get user Report data ********/
 
                 dialog.dismiss();
             }
@@ -442,9 +541,10 @@ public class Act_Award_List extends BaseActivity implements PaginationAdapterCal
         });
 
 
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "type", "organisation",
+        //JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.companyOrgId
+        JsonObject object = Functions.getClient().getJsonMapObject("type", "organisation",
                 "typeId", sessionParam.orgId
+
         );
         baseRequest.callAPIPost(1, object, ConstantAPI.getUserByType);
     }

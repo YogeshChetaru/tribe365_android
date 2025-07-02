@@ -767,12 +767,12 @@ public class BasicHomeActivity extends BaseActivity  {
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+               // utility.showToast(mContext,message);
             }
         });
         JsonObject object=Functions.getClient().getJsonMapObject("orgId",orgId,
@@ -807,12 +807,12 @@ public class BasicHomeActivity extends BaseActivity  {
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+               // utility.showToast(mContext,message);
 
             }
         });
@@ -844,12 +844,12 @@ public class BasicHomeActivity extends BaseActivity  {
             }
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
         });
         JsonObject object=Functions.getClient().getJsonMapObject("userId",sessionParam.id);

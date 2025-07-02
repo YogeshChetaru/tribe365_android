@@ -201,7 +201,7 @@ public class Act_Know_Home extends BaseActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.act_know_home);
+        //setContentView(R.layout.act_know_home);
         utility=new Utility();
         sessionParam=new SessionParam(mContext);
         ButterKnife.bind(this);
@@ -302,6 +302,7 @@ public class Act_Know_Home extends BaseActivity  {
 
     /******** get Filter for Selection **************/
     private void setDataonSelection(String spinnerValue, KnowOrgDetails homeDetail) {
+        //String[] courses = { "Day Wise" ,"Week Wise","Month Wise" };
         if (spinnerValue.contains("Week")){
             setWeeklyData(homeDetail);
         }else if (spinnerValue.contains("Month")){
@@ -332,6 +333,10 @@ public class Act_Know_Home extends BaseActivity  {
         }
         
     }
+
+
+
+    /******************** set Weekly selection ******************/
     @SuppressLint("SetTextI18n")
     private void setWeeklyData(KnowOrgDetails homeDetail) {
         if(homeDetail.getThisWeekHIPercent()!=null){
@@ -347,6 +352,8 @@ public class Act_Know_Home extends BaseActivity  {
             setThirdColumnData(Double.valueOf(homeDetail.getLastToLastWeekHIPercent()),tv_day_after_value,day_after_face);
         }
     }
+
+    /************************* set monthly Selection ***********/
     @SuppressLint("SetTextI18n")
     private void setMonthlyData(KnowOrgDetails homeDetail) {
         Calendar c= Calendar.getInstance();
@@ -429,20 +436,19 @@ public class Act_Know_Home extends BaseActivity  {
             imageFace.setImageResource(R.drawable.low);
             //eng_tv_score.setText(indexEngScore+"");
             valueText.setTextColor(getResources().getColor(R.color.motion_index_low));
-        }
-        else if (finalCount >= 31 && finalCount <= 60) {
+        } else if (finalCount >= 31 && finalCount <= 60) {
             imageFace.setImageResource(R.drawable.medium);
             //tv_index_eng_number.setText(indexEngScore+"");
             //eng_tv_score.setText(todayEIScore + "");
             valueText.setTextColor(getResources().getColor(R.color.motion_index_medium));
-        }
-        else if (finalCount >= 60) {
+        } else if (finalCount >= 60) {
             imageFace.setImageResource(R.drawable.smile_green_big);
             //tv_index_eng_number.setText(indexEngScore+"");
             //eng_tv_score.setText(todayEIScore + "");
             valueText.setTextColor(getResources().getColor(R.color.motion_index_high));
         }
     }
+    /************** for second column check condition according to set face High low Medium ***************/
     @SuppressLint("SetTextI18n")
     private void setSecondColumnData(Double finalCount, TextView valueText, ImageView imageFace){
         valueText.setText(finalCount + "%");
@@ -463,6 +469,7 @@ public class Act_Know_Home extends BaseActivity  {
             valueText.setTextColor(getResources().getColor(R.color.motion_index_high));
         }
     }
+    /************** for third column check condition according to set face High low Medium ***************/
     private void setThirdColumnData(Double finalCount,TextView valueText,ImageView imageFace){
         valueText.setText(finalCount + "%");
         if (finalCount >= 0 && finalCount <= 30) {
@@ -520,6 +527,7 @@ public class Act_Know_Home extends BaseActivity  {
             sp_office.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
+                  //  Toast.makeText(getApplicationContext(), list_office.get(i), Toast.LENGTH_LONG).show();
                     if (flag=true){
                         if (iCurrentSelection!=-1){
                             officeId= list_office_id.get(i);
@@ -629,6 +637,9 @@ public class Act_Know_Home extends BaseActivity  {
         return format.format(number);
     }
 
+    /************* set Engagement Data From Organisation
+     * @param engagementData
+     * @param engagementIndexRank**********/
     @SuppressLint("SetTextI18n")
     private void setEngagementData(Double engagementData, Integer engagementIndexRank) {
         Double finalCount=engagementData;
@@ -677,6 +688,12 @@ public class Act_Know_Home extends BaseActivity  {
         LinearLayoutManager layoutManager= new LinearLayoutManager(mContext);
         rv_kudos_awards.setNestedScrollingEnabled(false);
         rv_kudos_awards.setLayoutManager(layoutManager);
+       // rv_kudos_awards.setHasFixedSize(true);
+        //Drawable mDivider=ContextCompat.getDrawable(this,R.drawable.divider);
+       /* DividerItemDecoration htDecoration= new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
+        assert mDivider !=null;
+        htDecoration.setDrawable(mDivider);*/
+
 
         ad_kudosAward =new Ad_kudos_awards_list(kudosAwardList, mContext, new Ad_kudos_awards_list.groupUsersListener() {
             @Override
@@ -694,10 +711,14 @@ public class Act_Know_Home extends BaseActivity  {
         rv_kudos_champ.setLayoutManager(layoutManager);
         rv_kudos_champ.setHasFixedSize(true);
         Drawable mDivider = ContextCompat.getDrawable(this, R.drawable.divider);
+        // Create a DividerItemDecoration whose orientation is Horizontal
         DividerItemDecoration hItemDecoration = new DividerItemDecoration(this,
                 DividerItemDecoration.VERTICAL);
+        // Set the drawable on it
         assert mDivider != null;
         hItemDecoration.setDrawable(mDivider);
+        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset_small);
+        //rv_kudos_champ.addItemDecoration(hItemDecoration);
         rv_kudos_champ.setNestedScrollingEnabled(false);
 
         ad_Multi_champions =new Ad_Multi_champions(lastMonthKudosChamp,mContext);
@@ -721,6 +742,9 @@ public class Act_Know_Home extends BaseActivity  {
                         }catch (Exception e){
                             e.printStackTrace();
                         }
+                        /*String  convertDate=homeDetail.getDayBeforeYesterdayDate();
+                        if (convertDate!=null)*/
+                       // lastDate=utility.parseDateToddMMyyyy(convertDate);
                         if(sessionParam.loginVersion ==3){
                             setCultureDataBasicVersion(homeDetail.getCultureIndex(),homeDetail.getCultureIndexRank());
                         }else {
@@ -732,7 +756,7 @@ public class Act_Know_Home extends BaseActivity  {
                             setEngagementData(homeDetail.getEngagementIndex(), homeDetail.getEngagementIndexRank());
                         }
                          kudosList=homeDetail.getLastMonthKudosChamp();
-
+                        kudosAwardList=homeDetail.getLatestKudosAward();
                          if (kudosList.size()>0) {
                              rv_kudos_champ.setVisibility(View.VISIBLE);
                              tv_no_record_found.setVisibility(View.GONE);
@@ -752,10 +776,6 @@ public class Act_Know_Home extends BaseActivity  {
                              rv_kudos_champ.setVisibility(View.GONE);
                              tv_no_record_found.setVisibility(View.VISIBLE);
                          }
-
-
-
-                        kudosAwardList=homeDetail.getLatestKudosAward();
                          if (kudosAwardList.size()>0){
                              rv_kudos_awards.setVisibility(View.VISIBLE);
                              no_awards_found.setVisibility(View.GONE);
@@ -786,17 +806,16 @@ public class Act_Know_Home extends BaseActivity  {
 
                 @Override
                 public void onFailure(int requestCode, String errorCode, String message) {
-                    utility.showToast(mContext, message);
+                    //utility.showToast(mContext, message);
                 }
 
                 @Override
                 public void onNetworkFailure(int requestCode, String message) {
                     //errorLayout.showError(message);
-                    utility.showToast(mContext, message);
+                    //utility.showToast(mContext, message);
                 }
             });
-            JsonObject object = Functions.getClient().getJsonMapObject(
-                    "orgId", orgId,
+            JsonObject object = Functions.getClient().getJsonMapObject("orgId", orgId,
                     "officeId", officeId,
                     "departmentId", depart_id
             );
@@ -823,13 +842,13 @@ public class Act_Know_Home extends BaseActivity  {
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
         });
         Map<String, String> map = new HashMap<>();
@@ -870,12 +889,12 @@ public class Act_Know_Home extends BaseActivity  {
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext, message);
+               // utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
         });
         JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId

@@ -109,17 +109,17 @@
                 android:paddingStart="@dimen/activity_margin_quarter"
                 android:paddingEnd="@dimen/activity_margin_quarter"
                 >
+
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="22dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/red_menu_dot"
                     android:layout_gravity="end|center_vertical"
-                    android:layout_marginTop="@dimen/activity_padding_medium"
-                    android:layout_marginBottom="@dimen/activity_padding_medium"
                     android:layout_marginStart="@dimen/activity_padding_medium"
+                    android:layout_marginTop="@dimen/activity_padding_medium"
                     android:layout_marginEnd="@dimen/activity_padding_medium"
+                    android:layout_marginBottom="@dimen/activity_padding_medium"
                     android:contentDescription="@string/app_name"
-                    />
+                    android:src="@drawable/red_menu_dot" />
 
             </LinearLayout>
         </LinearLayout>
@@ -167,7 +167,7 @@
             app:cardElevation="5dp"
             android:paddingStart="@dimen/activity_padding_half"
             android:paddingEnd="@dimen/activity_padding_half"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginEnd="@dimen/activity_margin"
             android:layout_marginTop="@dimen/activity_padding_half"

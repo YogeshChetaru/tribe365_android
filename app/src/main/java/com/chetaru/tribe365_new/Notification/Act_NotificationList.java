@@ -1,4 +1,6 @@
 package com.chetaru.tribe365_new.Notification;
+
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -100,7 +102,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_notification_list);
+       // setContentView(R.layout.act_notification_list);
         rv_list_archive = findViewById(R.id.rv_list_archive);
         rv_list_unreadNoti = findViewById(R.id.rv_list_unreadNoti);
         search_bar = findViewById(R.id.search_bar);
@@ -128,6 +130,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
         rv_list_archive.setItemAnimator(new DefaultItemAnimator());
         rv_list_unreadNoti.setItemAnimator(new DefaultItemAnimator());
         rv_list_archive.setAdapter(ad_notificationList);
+        //rv_list_unreadNoti.setAdapter(ad_unreadNotification);
         rv_list_unreadNoti.addOnScrollListener(new PaginationScrollListenerUR(linearLayoutManager2) {
             @Override
             protected void loadMoreItems() {
@@ -213,6 +216,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
             callHomeAct(mContext);
         });
 
+       // removeBadge(navigationView,R.id.noti_bell_image,0);
     }
 
     @Override
@@ -284,7 +288,9 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
         }
     }
 
-
+    //this api we used for archive
+    /*API call to get all notification list
+     */
     public void api_notificationList() {
         //hideErrorView();
         currentPage = PAGE_START;
@@ -324,8 +330,8 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                 utility.showToast(mContext, message);
             }
         });
-       JsonObject object = Functions.getClient().getJsonMapObject(
-                "userId", sessionParam.id,
+        //JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.companyOrgId
+        JsonObject object = Functions.getClient().getJsonMapObject("userId", sessionParam.id,
                 "page", currentPage + ""
         );
         baseRequest.callAPIPost(1, object, ConstantAPI.getBubbleRatingNotificationList);
@@ -344,6 +350,9 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                     JSONArray jsonArray = new JSONArray(object.toString());
                     Log.d("unreadNotification", "ntoi:-" + jsonArray);
                     Log.d("unreadNotification", "ntoi:-" + object);
+                    //TOTAL_PAGES = jsonObject.optInt("totalPageCount");
+                    //UNREAD_TOTAL_PAGES= jsonArray.
+
                     archiveAll = jsonArray.length() == 0;
                     if (archiveAll) {
                         tv_sendToArchive.setVisibility(View.GONE);
@@ -419,6 +428,10 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                             modelNotificationList.setTitle("First Use Checklist");
                             modelNotificationList.setDescription(getResources().getString(R.string.checklist_complete_personality_Type_Questionnaire));
                             listUnread.add(modelNotificationList);
+
+
+
+
                         }
                     }
                     modelNotificationList = new ModelNotificationList();
@@ -485,6 +498,8 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                             listUnread.add(modelNotificationList);
                         }
                     }
+                    //adding unread notification
+                    // listUnread.addAll(listUnread_temp);
 
                     if (tribeValue &&
                             functionalLens &&
@@ -492,8 +507,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                             cultureStructure
                             && motivation
                             && tribeometer
-                            && diagnostic)
-                    {
+                            && diagnostic) {
                         Boolean TribeValue_todo = joToDoList.optBoolean("tribeValue");
                         Boolean functionalLens_todo = joToDoList.optBoolean("functionalLens");
                         Boolean teamRoleAnswers_todo = joToDoList.optBoolean("teamRoleAnswers");
@@ -620,14 +634,68 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
 
                     }
 
+                    //reminderList {"motivation":false,"tribeometer":false,"bubbleRatings":false}"
+
+                    ModelNotificationList modelReminderList = new ModelNotificationList();
+                    //---------------------------ReminderList"----------------------------------
 
 
+                    /*if (rem_tribeValue) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_evaluate_yourself_against_tribe_value));
+                        listUnread.add(modelReminderList);
+                    }
+                    modelReminderList = new ModelNotificationList();
+                    if (rem_functionalLens) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_complete_personality_Type_Questionnaire));
+                        listUnread.add(modelReminderList);
+                    }
+                    modelReminderList = new ModelNotificationList();
+                    if (rem_teamRoleAnswers) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_Complete_Team_Role_Questionnaire));
+                        listUnread.add(modelReminderList);
+                    }
+                    modelReminderList = new ModelNotificationList();
+                    if (rem_cultureStructure) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_Complete_Culture_Structure_Questionnaire));
+                        listUnread.add(modelReminderList);
+                    }
+                    modelReminderList = new ModelNotificationList();
+                    if (rem_motivation) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_Complete_Motivation_Questionnaire));
+                        listUnread.add(modelReminderList);
+                    }
+                    modelReminderList = new ModelNotificationList();
+                    if (rem_tribeometer) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_Complete_Tribeometer_Survey));
+                        listUnread.add(modelReminderList);
+                    }
+                    modelReminderList = new ModelNotificationList();
+                    if (rem_diagnostic) {
+                        modelReminderList.setTitle("Reminder To Do List!");
+                        modelReminderList.setDescription(getResources().getString(R.string.checklist_Complete_Diagnostic_Survey));
+                        listUnread.add(modelReminderList);
+                    }
+                    if (!rem_bubbleRatings){}*/
+                    //adding unread notification
                     listUnread.addAll(listUnread_temp);
 
-                    ad_unreadNotification = new Ad_UnreadNotification(listUnread, reminderList, mContext, Act_NotificationList.this::kudosNotiClick);
+                    //--------------------------ToDoList-----------------------------------
+                    ad_unreadNotification = new Ad_UnreadNotification(listUnread, reminderList, mContext, new Ad_UnreadNotification.kudosListener() {
+                        @Override
+                        public void KudosClick() {
+                            kudosNotiClick();
+                        }
+                    });
                     rv_list_unreadNoti.setAdapter(ad_unreadNotification);
                     if (currentPageUR<=UNREAD_TOTAL_PAGES)
                         ad_unreadNotification.addLoadingFooter();
+                    //ad_unreadNotification.notifyDataSetChanged();
                     else
                         isLastPageUR=true;
                     if (currentPageUR== UNREAD_TOTAL_PAGES){
@@ -651,8 +719,8 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "userId", sessionParam.id,
+        //JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.companyOrgId
+        JsonObject object = Functions.getClient().getJsonMapObject("userId", sessionParam.id,
                 "page", currentPageUR + ""
         );
         baseRequest.callAPIPost(1, object, ConstantAPI.getBubbleRatingUnReadNotificationList);
@@ -681,8 +749,11 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
         ll_archive.setVisibility(View.GONE);
         rv_list_unreadNoti.setVisibility(View.GONE);
         try {
-
+            // api_notificationList();
+            // api_notificationListUnread();
             if (noti_selected) {
+                //Toast.makeText(mContext, "archive selected", Toast.LENGTH_SHORT).show();
+                //noti_selected = true;
                 listUnread.clear();
                 ad_unreadNotification = new Ad_UnreadNotification(listUnread, reminderList, this, new Ad_UnreadNotification.kudosListener() {
                     @Override
@@ -691,10 +762,13 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                     }
                 });
                 ad_unreadNotification.notifyDataSetChanged();
+                //rv_list_unreadNoti.setAdapter(ad_unreadNotification);
+                // rv_list_archive.setAdapter(ad_unreadNotification);
                 ll_archive.setVisibility(View.GONE);
                 rv_list_unreadNoti.setVisibility(View.VISIBLE);
                 api_notificationListUnread();
             } else {
+                // Toast.makeText(mContext, "notification selected", Toast.LENGTH_SHORT).show();
                 list.clear();
                 noti_selected = false;
                 ad_notificationList = new Ad_NotificationList(list, mContext, new Ad_NotificationList.kudosClickListener() {
@@ -703,6 +777,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                         kudosNotiClick();
                     }
                 });
+                //rv_list_archive.setAdapter(ad_notificationList);
                 ll_archive.setVisibility(View.VISIBLE);
                 rv_list_unreadNoti.setVisibility(View.GONE);
                 api_notificationList();
@@ -710,6 +785,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
         }catch (Exception e){
             e.printStackTrace();
         }
+
     }
     public void api_loadnext_page_unread(){
         baseRequest = new BaseRequest(mContext);
@@ -729,10 +805,17 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                     JSONArray jsonArray = new JSONArray(object.toString());
                     ArrayList<ModelNotificationList> listUnread  = baseRequest.getDataList(jsonArray, ModelNotificationList.class);
                     ad_unreadNotification.addAll(listUnread);
+                    //ad_unreadNotification.removeLoadingFooter();
 
+                    //ad_notificationListP = new Ad_NotificationList_pagination(rv_list,list, mContext);
+
+
+
+
+                    //rv_list_archive.setAdapter(ad_notificationList);
                     if (currentPageUR != UNREAD_TOTAL_PAGES)
                         ad_unreadNotification.addLoadingFooter();
-
+                    //ad_unreadNotification.notifyDataSetChanged();
                     else isLastPageUR = true;
                     if (currentPage == UNREAD_TOTAL_PAGES)
                         isLastPageUR= true;
@@ -753,8 +836,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                 api_notificationListUnread();
             }
         });
-         JsonObject object=Functions.getClient().getJsonMapObject(
-                 "userId",sessionParam.id,
+         JsonObject object=Functions.getClient().getJsonMapObject("userId",sessionParam.id,
                 "page", currentPageUR+"");
         baseRequest.callAPIPost(1,object, ConstantAPI.getBubbleRatingUnReadNotificationList);
 
@@ -850,8 +932,7 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "userId", sessionParam.id);
+        JsonObject object = Functions.getClient().getJsonMapObject("userId", sessionParam.id);
         baseRequest.callAPIPost(1, object, ConstantAPI.readAllNotification);
     }
     private void getKudos() {
@@ -883,12 +964,12 @@ public class Act_NotificationList extends BaseActivity implements PaginationAdap
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+              //  utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+              //  utility.showToast(mContext,message);
             }
         });
         JsonObject object=Functions.getClient().getJsonMapObject("orgId",sessionParam.orgId);

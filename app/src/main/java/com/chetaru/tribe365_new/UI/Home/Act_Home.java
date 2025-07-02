@@ -79,6 +79,7 @@ import com.chetaru.tribe365_new.Adapter.Ad_Individual;
 import com.chetaru.tribe365_new.Adapter.Ad_award_list;
 import com.chetaru.tribe365_new.Adapter.CircleValueAdapter;
 import com.chetaru.tribe365_new.Adapter.OnItemClickCustom;
+import com.chetaru.tribe365_new.BuildConfig;
 import com.chetaru.tribe365_new.CallBack.OnChildItemsClick;
 import com.chetaru.tribe365_new.Notification.Act_NotificationList;
 import com.chetaru.tribe365_new.R;
@@ -420,7 +421,7 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.act_home);
+       // setContentView(R.layout.act_home);
         sessionParam = new SessionParam(mContext);
         utility = new Utility();
         userId=sessionParam.id;
@@ -467,6 +468,9 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
 
         /******** handel Bottom nav with notification Count badge*******/
 
+      /*  bottomNavigation = findViewById(R.id.nav_view);
+        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        getNotificationBadge(bottomNavigation, mContext);*/
 
 
         /******* get kudos Value and set on RecyclerView *******/
@@ -475,8 +479,9 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
         getIndividualDataRecyclerView();
 
         /*************** api Calling ******/
-
+        //getDashboardDetail();
         getHomePageDetails();
+        //getKudos();
         getDepartment();
         api_getnotificationCount();
         updateNotificationStatus();
@@ -895,6 +900,10 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
                 kudos_recycler_view_ll.setVisibility(View.VISIBLE);
                 break;
             case R.id.tv_vision:
+                
+                //cv_index_eng.startAnimation(AnimationUtils.loadAnimation(this,R.anim.shake));
+                //card_happy_index_ll.startAnimation(AnimationUtils.loadAnimation(this,R.anim.blink));
+
 
                 if (!showButton) {
                     ll_viewPlay_map.setVisibility(View.VISIBLE);
@@ -934,6 +943,7 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
                 checkAwardBottom(latestKudoAward);
                 break;
             case R.id.card_happy_index_ll:
+                //card_happy_index_ll.startAnimation(AnimationUtils.loadAnimation(this,R.anim.blink));
                 card_happy_index_ll.clearAnimation();
                 break;
             case R.id.iv_notic:
@@ -1155,14 +1165,17 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
         String showEngValue=trimTrailingZeros(EngValue);
         if (  indexEngScore <= 499) {
             index_eng_image.setImageResource(R.drawable.low);
+            //tv_index_eng_number.setText(indexEngScore+"");
             tv_index_eng_number.setText(showEngValue + "");
             tv_index_eng_number.setTextColor(getResources().getColor(R.color.motion_index_low));
         } else if (indexEngScore >= 500 && indexEngScore <= 1099) {
             index_eng_image.setImageResource(R.drawable.medium);
+            //tv_index_eng_number.setText(indexEngScore+"");
             tv_index_eng_number.setText(showEngValue + "");
             tv_index_eng_number.setTextColor(getResources().getColor(R.color.motion_index_medium));
         } else if (indexEngScore >= 1100) {
             index_eng_image.setImageResource(R.drawable.smile_green_big);
+            //tv_index_eng_number.setText(indexEngScore+"");
             tv_index_eng_number.setText(showEngValue + "");
             tv_index_eng_number.setTextColor(getResources().getColor(R.color.motion_index_high));
         }
@@ -1195,6 +1208,7 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
     /****************** show happyIndex on 4 O'clock******/
     private void getHappyIndexBlink(Boolean dailyNotiStatus, Integer leaveStatus) {
 
+       // dailyNotiStatus=false;
         if (leaveStatus!= 1) {
             if (!dailyNotiStatus && leaveStatus != 1) {
 
@@ -1261,6 +1275,7 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
                     try{
                         int status = homeDetail.getLeaveStatus();
                         if (status == 1){
+                            //dialogEnableAbsent();
                             absent_card_view.setVisibility(View.VISIBLE);
                         }else {
                             absent_card_view.setVisibility(View.GONE);
@@ -1322,6 +1337,7 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
                         }
                     try {
                         indexEngScoreData( homeDetail.getTodayEIScore());
+                       // dialogKudosSendResponse(homeDetail.getTodayEIScore());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -1348,7 +1364,62 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
                         e.printStackTrace();
                     }
 
+                /*ad_circle_value=new CircleValueAdapter(kudosList, mContext, new OnChildItemsClick() {
+                        @Override
+                        public void onParentClick(int id, int position, HomeBelief belief) {
+                            try {
+                               // HomeBelief beliefList= object;
+                                if (!belief.getValueUrl().trim().equals("")|| !belief.getValueDesc().trim().equals("")){
+                                    Intent linkIntent=new Intent(mContext,Link_click_Activity.class);
+                                    linkIntent.putExtra("TitleName","VALUE");
+                                    linkIntent.putExtra("subTitleName",belief.getName());
+                                    linkIntent.putExtra("videoURL",belief.getValueUrl());
+                                    linkIntent.putExtra("Description",belief.getValueDesc());
+                                    startActivity(linkIntent);
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        @Override
+                        public void onChildClick(int id, int position, Object object) {
 
+                            fb_select_kudos_next.setVisibility(View.VISIBLE);
+
+                            kudosCount = 0;
+                            for (int i = 0; i < kudosList.size(); i++) {
+                                if (kudosList.get(i).isSelected()) {
+                                    kudosCount++;
+                                    break;
+                                }
+                            }
+
+                            if(kudosCount>0){
+                                fb_select_kudos_next.setVisibility(View.VISIBLE);
+                                checkAwardBottom(latestKudoAward);
+                            }else {
+                                fb_select_kudos_next.setVisibility(View.GONE);
+
+                            }
+                        }
+
+                        @Override
+                        public void onSubChildClick(int id, int position, Object object) {
+                           *//*****************change belife value on today to last week ********************//*
+                            showChangeDialog(kudosList,object , position);
+                        }
+
+                    @Override
+                    public void onLongClick(int id, int position, HomeBelief belief) {
+                           String titleName= belief.getName().trim();
+                            LongPressBeliefId= belief.getBeliefId().toString();
+                            LongPressDotValue= belief.getId().toString();
+                            LongPressValueNameId= belief.getValueId();
+                        dialogAmazingShow(titleName);
+                        amazingFlag=false;
+                    }
+                });
+                    rv_circle_value.setAdapter(ad_circle_value);*/
                     Ad_HomeKudosList ad_homeKudosList=new Ad_HomeKudosList(kudosList,mContext, new OnChildItemsClick() {
                         @Override
                         public void onParentClick(int id, int position, HomeBelief belief) {
@@ -1463,12 +1534,12 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+            //    utility.showToast(mContext,message);//todo Hemant
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+          //      utility.showToast(mContext,message);//todo Hemant
             }
         });
         JsonObject object=Functions.getClient().getJsonMapObject("orgId",orgId);
@@ -1697,13 +1768,13 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
         });
         //companyorgId is used in action only
@@ -1731,13 +1802,17 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
 
                     JSONObject jsonObject = new JSONObject(object.toString());
                     if (jsonObject.optInt("notificationCount") > 0) {
+                        // tv_notiCount.setText(jsonObject.optInt("notificationCount") + "");
                         countValue = jsonObject.optInt("notificationCount");
+                        // finalCount=340;
                         circle_count_tv.setVisibility(View.VISIBLE);
+
                         if (countValue > 99) {
                             circle_count_tv.setText("99+" + "");
                         } else {
                             circle_count_tv.setText(countValue + "");
                         }
+                        //showBadge(Act_Home.this,navigationView,R.id.nav_risk,countValue);
                     } else {
                         circle_count_tv.setVisibility(View.GONE);
                     }
@@ -1749,17 +1824,16 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+               // utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "userId", userId
+        JsonObject object = Functions.getClient().getJsonMapObject("userId", userId
                 //JsonObject object = Functions.getClient().getJsonMapObject("orgId", "9"
         );
         baseRequest.callAPIPostWOLoader(1, object,ConstantAPI.api_getBubbleUnReadNotifications );
@@ -1877,12 +1951,12 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
                 //ll_checklist.setVisibility(View.GONE);
-                Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show();
             }
         });
         JsonObject object = Functions.getClient().getJsonMapObject("version", newVersion
@@ -3168,10 +3242,6 @@ public class Act_Home extends BaseActivity implements View.OnClickListener{
 
     /*method to check the time span between 4 pm to 11 pm
      */
-
-
-
-
     public boolean checkTime() {
         try {
             String string1 = "16:00:00";

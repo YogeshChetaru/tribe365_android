@@ -101,7 +101,11 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
     LinearLayout expandableView;
     LinearLayout ll_valueAndBelief;
     RecyclerView rv_admin_report_dot;
-    ImageView iv_teamrole_downarrow, iv_personality_type_downarrow, iv_cultureStructure_downarrow, iv_motivation_downarrow, iv_diagnostic_downarrow;
+    ImageView iv_teamrole_downarrow,
+            iv_personality_type_downarrow,
+            iv_cultureStructure_downarrow,
+            iv_motivation_downarrow,
+            iv_diagnostic_downarrow;
     LinearLayout ll_teamRolsMain, ll_personality_typeMain, ll_sot_culture_main, ll_motivationMain, ll_diagnostic_graph_main;
     List<ModelAdminReportDOT> modelAdminReportList;
     Spinner sp_depart, sp_office;
@@ -119,7 +123,9 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
     ArrayList<ModelOfficeDepartment> list_officedepartment = new ArrayList<>();
 
     //Team role block view
-    TextView tv_maperkey_shape, tv_maperkey_coordinator, tv_maperkey_Completer, tv_maperkey_teamwork, tv_maperkey_Implementer, tv_maperkey_Monitor, tv_maperkey_plant, tv_maperkey_resource, tv_txt_shaper, tv_txt_coordinator, tv_txt_implementer, tv_txt_complete, tv_txt_Monitor, tv_txt_Team, tv_txt_plant, tv_txt_resource;
+    TextView tv_maperkey_shape, tv_maperkey_coordinator, tv_maperkey_Completer,
+            tv_maperkey_teamwork, tv_maperkey_Implementer, tv_maperkey_Monitor, tv_maperkey_plant, tv_maperkey_resource, tv_txt_shaper, tv_txt_coordinator,
+            tv_txt_implementer, tv_txt_complete, tv_txt_Monitor, tv_txt_Team, tv_txt_plant, tv_txt_resource;
 
     //Personality type views
     TextView tv_adm_cot_funt_NF_rating, tv_adm_cot_funt_ST_rating, tv_adm_cot_funt_SF_rating, tv_adm_cot_funt_NT_rating;
@@ -222,12 +228,13 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
 
     //clone with Diagnostics for Personality type
     BarChart Person_chart;
-    // @BindView(R.id.ll_diagno_help)
+   // @BindView(R.id.ll_diagno_help)
     LinearLayout tv_diagno_help;
     String org_name = "";
     ArrayList<ModelDiagnosticReport> li_Person_report = new ArrayList<>();
     ArrayList<Float> li_score_short_person = new ArrayList<>();
-    /*@BindView(R.id.rv_person_graph_list)*/ RecyclerView rv_diagnostic_graph_list_person;
+    /*@BindView(R.id.rv_person_graph_list)*/
+    RecyclerView rv_diagnostic_graph_list_person;
     @BindView(R.id.ll_diagnostic_graph)
     LinearLayout ll_diagnostic_graph;
 
@@ -238,7 +245,7 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.act_knowcompany);
+       // setContentView(R.layout.act_knowcompany);
         ButterKnife.bind(this);
         ll_tribeometer_msg = findViewById(R.id.ll_tribeometer_msg);
         ll_tribeometer_main = findViewById(R.id.ll_tribeometer_main);
@@ -257,16 +264,16 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
         Person_chart = findViewById(R.id.person_chart);
         tv_personalityBack = findViewById(R.id.tv_personality_back);
         tv_personalityBack.setOnClickListener(this);
-
+       
 
         init();
         serSessionParam();
     }
 
     private void serSessionParam() {
-        if (sessionParam.loginVersion == 3) {
+        if (sessionParam.loginVersion == 3){
             belief_card_ll.setVisibility(View.GONE);
-        } else {
+        }else {
             belief_card_ll.setVisibility(View.VISIBLE);
         }
     }
@@ -544,6 +551,9 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
         }
 
 
+
+
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
         rv_admin_report_dot.setLayoutManager(layoutManager);
 
@@ -635,7 +645,8 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                     //modelAdminReportDOT = gson.fromJson(jsonArrayDotGraph.toString(),ModelAdminReportDOT.class);
                     //Toast.makeText(currentAct, "check data", Toast.LENGTH_SHORT).show();
 
-                    Adapter_Admin_Report_DOT_Horizontal adapter_admin_report_dot_horizontal = new Adapter_Admin_Report_DOT_Horizontal(modelAdminReportList, mContext);
+                    Adapter_Admin_Report_DOT_Horizontal adapter_admin_report_dot_horizontal =
+                            new Adapter_Admin_Report_DOT_Horizontal(modelAdminReportList, mContext);
                     rv_admin_report_dot.setAdapter(adapter_admin_report_dot_horizontal);
                     //expandableView.setVisibility(View.VISIBLE);
 
@@ -694,34 +705,35 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                     setHappyIndex(monthJson);
 
 
+
                     if (path.contains("happyIndex")) {
                         scrollView.fullScroll(View.FOCUS_DOWN);
                     }
-                    if (ja_CultureIndexgraph.length() > 0) {
+                    if(ja_CultureIndexgraph.length()>0){
                         ll_cultureindex_graph_main.setVisibility(View.VISIBLE);
                     }
-                    if (ja_EngagmentIndexgraph.length() > 0) {
+                    if (ja_EngagmentIndexgraph.length()>0){
                         ll_engagement_index_graph_main.setVisibility(View.VISIBLE);
                     }
-                    if (jo_TeamRole.length() > 0) {
+                    if (jo_TeamRole.length()>0){
                         ll_teamRolsMain.setVisibility(View.VISIBLE);
                     }
-                    if (jo_PersonalityType.length() > 0) {
+                    if (jo_PersonalityType.length()>0){
                         ll_personality_typeMain.setVisibility(View.VISIBLE);
                     }
-                    if (jo_CultureStructure.length() > 0) {
+                    if(jo_CultureStructure.length()>0){
                         ll_sot_culture_main.setVisibility(View.VISIBLE);
                     }
-                    if (ja_Motivationgraph.length() > 0) {
+                    if (ja_Motivationgraph.length()>0){
                         ll_motivationMain.setVisibility(View.VISIBLE);
                     }
-                    if (ja_Diagnosticgraph.length() > 0) {
+                    if (ja_Diagnosticgraph.length()>0){
                         ll_diagnostic_graph_main.setVisibility(View.VISIBLE);
                     }
-                    if (ja_Tribometer.length() > 0) {
+                    if (ja_Tribometer.length()>0){
                         ll_tribeometer_main.setVisibility(View.VISIBLE);
                     }
-                    if (monthJson.length() > 0) {
+                    if (monthJson.length()>0){
                         ll_happyindex_graph_main.setVisibility(View.VISIBLE);
                     }
 
@@ -749,7 +761,10 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
         if (officeId.isEmpty()) {
             officeId = sessionParam.officeId;
         }
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", depart_id
+        JsonObject object = Functions.getClient().getJsonMapObject(
+                "orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", depart_id
                 //at orgid 29 i found department so m using it temporarily
         );
         baseRequest.callAPIPost(1, object, ConstantAPI.getOrgDashboardReportWithFilter);
@@ -1231,8 +1246,8 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
         xAxis.setSpaceBetweenLabels(1);
         YAxis leftAxis = chart_culture_index.getAxisLeft();
         leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
-        // leftAxis.setAxisMinValue(1f);
-        // leftAxis.setAxisMinValue(-2000);
+       // leftAxis.setAxisMinValue(1f);
+       // leftAxis.setAxisMinValue(-2000);
         leftAxis.setStartAtZero(false);
         leftAxis.enableGridDashedLine(10f, 10f, 0f);
         leftAxis.setDrawLimitLinesBehindData(true);
@@ -1448,7 +1463,7 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
         xAxis.setDrawGridLines(true);
         xAxis.setSpaceBetweenLabels(1);
         YAxis leftAxis = chart_engagement_index.getAxisLeft();
-        //  float min = Collections.min(arrayY);
+      //  float min = Collections.min(arrayY);
         leftAxis.removeAllLimitLines(); // reset all limit lines to avoid overlapping lines
         //leftAxis.setAxisMinValue(1f);
         //leftAxis.setAxisMinValue(-2000);
@@ -1638,7 +1653,11 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", departmentId, "categoryId", categoryId);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", departmentId,
+                "categoryId", categoryId
+        );
         baseRequest.callAPIPost(1, object, getString(R.string.api_getDiagnsticReportSubGraph));
     }
 
@@ -1672,8 +1691,12 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", depart_id, "categoryId", categoryId + "");
-        baseRequest.callAPIPost(1, object, ConstantAPI.api_getTribeometerMainSubGraph);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", depart_id,
+                "categoryId", categoryId + ""
+        );
+        baseRequest.callAPIPost(1, object, ConstantAPI.api_getTribeometerMainSubGraph );
     }
 
     /*API to get tibreoMetersubgraph data when the user clicked on the graph*/
@@ -1707,8 +1730,13 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", depart_id, "categoryId", triboCategoryId + "", "subCategoryId", subCategoryId + "");
-        baseRequest.callAPIPost(1, object, ConstantAPI.api_getTribeometerSubGraph);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", depart_id,
+                "categoryId", triboCategoryId + "",
+                "subCategoryId", subCategoryId + ""
+        );
+        baseRequest.callAPIPost(1, object, ConstantAPI.api_getTribeometerSubGraph );
 
     }
 
@@ -1739,8 +1767,12 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", departmentId, "categoryId", categoryId);
-        baseRequest.callAPIPost(1, object, ConstantAPI.api_getPersonalityTypeReportSubGraph);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", departmentId,
+                "categoryId", categoryId
+        );
+        baseRequest.callAPIPost(1, object,ConstantAPI.api_getPersonalityTypeReportSubGraph );
     }
 
     /**/
@@ -1827,7 +1859,10 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 }
                 break;
             case R.id.iv_cultureStructure_downarrow:
-                if (tv_PERSON_point.getText().toString().equals("0") && tv_POWER_point.getText().toString().equals("0") && tv_ROLE_point.getText().toString().equals("0") && tv_TRIBE_point.getText().toString().equals("0")) {
+                if (tv_PERSON_point.getText().toString().equals("0") &&
+                        tv_POWER_point.getText().toString().equals("0") &&
+                        tv_ROLE_point.getText().toString().equals("0") &&
+                        tv_TRIBE_point.getText().toString().equals("0")) {
                     if (tv_nrf_cultureStructure.getVisibility() == View.VISIBLE) {
                         tv_nrf_cultureStructure.setVisibility(View.GONE);
                         btn_sot_review_nrf.setVisibility(View.GONE);
@@ -2099,18 +2134,19 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                         if (officeId.equals("0")) {
                             li_ModelDepartmentList.clear();
                             getDepartmentList();
-                        } else for (int j = 0; j < list_officedepartment.size(); j++) {
-                            if (officeId.equals(list_officedepartment.get(j).getOfficeId().toString())) {
-                                for (int k = 0; k < list_officedepartment.get(j).getDepartment().size(); k++) {
-                                    try {
-                                        list_depart.add(list_officedepartment.get(j).getDepartment().get(k).getDepartment());
-                                        list_depart_id.add(list_officedepartment.get(j).getDepartment().get(k).getId().toString());
-                                    } catch (Exception e) {
-                                        e.printStackTrace();
+                        } else
+                            for (int j = 0; j < list_officedepartment.size(); j++) {
+                                if (officeId.equals(list_officedepartment.get(j).getOfficeId().toString())) {
+                                    for (int k = 0; k < list_officedepartment.get(j).getDepartment().size(); k++) {
+                                        try {
+                                            list_depart.add(list_officedepartment.get(j).getDepartment().get(k).getDepartment());
+                                            list_depart_id.add(list_officedepartment.get(j).getDepartment().get(k).getId().toString());
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                     }
                                 }
                             }
-                        }
                     }
                 }
             }
@@ -2138,18 +2174,18 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+               // utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
                 //errorLayout.showError(message);
-                utility.showToast(mContext, message);
+                //utility.showToast(mContext, message);
             }
         });
         Map<String, String> map = new HashMap<>();
         map.put("", "");
-        baseRequest.callAPIGET(1, map, ConstantAPI.getDepartmentList);
+        baseRequest.callAPIGET(1, map,ConstantAPI.getDepartmentList);
     }
 
     /**/
@@ -2195,7 +2231,8 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId
+        );
         baseRequest.callAPIPost(1, object, ConstantAPI.getAllOfficenDepartments);
     }
 
@@ -2285,8 +2322,12 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", departmentId, "year", year);
-        baseRequest.callAPIPost(1, object, ConstantAPI.api_getHappyIndexMonthCount);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", departmentId,
+                "year", year
+        );
+        baseRequest.callAPIPost(1, object,ConstantAPI.api_getHappyIndexMonthCount );
     }
 
     /*if again user clicks on month graph then he/she will get data in a week
@@ -2318,8 +2359,13 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", departmentId, "year", selectedyear, "month", selectedmonth);
-        baseRequest.callAPIPost(1, object, ConstantAPI.api_getHappyIndexWeeksCount);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", departmentId,
+                "year", selectedyear,
+                "month", selectedmonth
+        );
+        baseRequest.callAPIPost(1, object,ConstantAPI.api_getHappyIndexWeeksCount );
     }
 
     /* if the user clicks on week graph then he/she will get data in days.
@@ -2351,8 +2397,14 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId, "officeId", officeId, "departmentId", departmentId, "year", selectedyear, "month", selectedmonth, "week", selectedWeek);
-        baseRequest.callAPIPost(1, object, ConstantAPI.api_getHappyIndexDaysCount);
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.orgId,
+                "officeId", officeId,
+                "departmentId", departmentId,
+                "year", selectedyear,
+                "month", selectedmonth,
+                "week", selectedWeek
+        );
+        baseRequest.callAPIPost(1, object,ConstantAPI.api_getHappyIndexDaysCount);
     }
 
     //clone as Diagnostics for PersonType
@@ -2361,6 +2413,7 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
     protected void onResume() {
         super.onResume();
         try {
+
 
 
         } catch (Exception e) {
@@ -2423,11 +2476,11 @@ public class Act_knowcompany extends BaseActivity implements View.OnClickListene
 
     @Override
     public void onBackPressed() {
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView= findViewById(R.id.nav_view);
         int selectedItemId = bottomNavigationView.getSelectedItemId();
-        if (R.id.nav_profile != selectedItemId) {
-            mContext.startActivity(new Intent(mContext, Act_ProfileUser.class));
-        } else {
+        if (R.id.nav_profile!=selectedItemId){
+            mContext.startActivity(new Intent(mContext,Act_ProfileUser.class));
+        }else {
             super.onBackPressed();
         }
     }

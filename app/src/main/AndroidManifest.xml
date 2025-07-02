@@ -47,6 +47,8 @@
     <application
         android:name="com.chetaru.tribe365_new.API.retrofit.MyAppContext"
         android:allowBackup="true"
+        android:debuggable="true"
+
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"

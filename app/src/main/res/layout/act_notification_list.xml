@@ -117,6 +117,7 @@
                     android:gravity="fill_horizontal"
                     android:hint="Search"
                     android:iconifiedByDefault="false"
+
                     android:orientation="horizontal"
                     android:textSize="@dimen/text_size_medium"
                     android:visibility="gone" />

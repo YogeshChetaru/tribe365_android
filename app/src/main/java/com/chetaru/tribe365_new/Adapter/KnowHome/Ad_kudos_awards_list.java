@@ -93,10 +93,20 @@ public class Ad_kudos_awards_list extends RecyclerView.Adapter<Ad_kudos_awards_l
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
+        MyCircleImageView person_image;
+        TextView desc_tv,award_value_tv,date_tv;
+        TextView award_person_name_tv;
+        View bottomView;
         KudosAwardListBinding itemBinding;
         public MyViewHolder(@NonNull KudosAwardListBinding itemBinding) {
             super(itemBinding.getRoot());
             this.itemBinding=itemBinding;
+           /* person_image= view.findViewById(R.id.person_image);
+            desc_tv=view.findViewById(R.id.award_desc_tv);
+            award_person_name_tv=view.findViewById(R.id.award_person_name_tv);
+            award_value_tv= view.findViewById(R.id.award_name_tv);
+            date_tv= view.findViewById(R.id.award_date_tv);
+            bottomView= view.findViewById(R.id.bottom_view);*/
         }
     }
 

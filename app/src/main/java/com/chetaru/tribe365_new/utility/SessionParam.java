@@ -150,7 +150,8 @@ public class SessionParam {
         prefsEditor.commit();
     }
     public void happyIndexDialogShow(Context context, String saveDate, boolean clickValue) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(
+                PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = sharedPreferences.edit();
         prefsEditor.putString("todayDate", saveDate);
         prefsEditor.putBoolean("clickValue", clickValue);

@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 //apply plugin: 'com.novoda.bintray-release'
 
 android {
-    namespace "com.shawnlin.numberpicker"
-    compileSdkVersion 30
+    compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 30
+        minSdkVersion 21
+        //noinspection EditedTargetSdkVersion
+        targetSdkVersion 34
     }
 }
 

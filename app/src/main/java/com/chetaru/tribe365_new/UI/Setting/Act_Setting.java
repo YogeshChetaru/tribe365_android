@@ -278,6 +278,8 @@ public class Act_Setting extends BaseActivity {
                     Gson gson = new Gson();
                     //JSONArray jsonArray = new JSONArray(object.toString());
                     JSONObject jsonObject= new JSONObject(object.toString());
+                    Log.d("api 333", "updatePushNotificationStatus: "+jsonObject.toString());
+
                     String notiStatus= jsonObject.getString("notificationPush");
                     Log.d("NotificationStatus",notiStatus);
                 }catch (Exception e){
@@ -287,12 +289,12 @@ public class Act_Setting extends BaseActivity {
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+  //              utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+//                utility.showToast(mContext,message);
             }
         });
         int statusValue=0;

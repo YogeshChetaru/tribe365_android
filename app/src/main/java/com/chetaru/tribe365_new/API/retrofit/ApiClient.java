@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "https://console.tribe365.co/api/";  // live URL
+       public static final String BASE_URL = "https://console.tribe365.co/api/";  // live URL
+      // public static final String BASE_URL = "https://upgrade-console.tribe365.co/";  // live URL
 
     //public static final String BASE_URL = "https://tribe365demo.chetaru.co.uk/api/"; //(demo)  staging
 

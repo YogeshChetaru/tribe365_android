@@ -1090,8 +1090,7 @@ public class Act_ProfileUser extends BaseActivity implements View.OnClickListene
                             utility.showToast(mContext, message);
                         }
                     });
-                    JsonObject object = Functions.getClient().getJsonMapObject(
-                            "currentPassword", etCurrentPass.getText().toString(),
+                    JsonObject object = Functions.getClient().getJsonMapObject("currentPassword", etCurrentPass.getText().toString(),
                             "newPassword", etNewPassword.getText().toString()
                             //JsonObject object = Functions.getClient().getJsonMapObject("orgId", "9"
                     );

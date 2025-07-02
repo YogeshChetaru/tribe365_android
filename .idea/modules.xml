@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/tribe365_android.iml" filepath="$PROJECT_DIR$/.idea/tribe365_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/tribe365_android.MPChartLib.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/tribe365_android.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/tribe365_android.library.unitTest.iml" />
+    </modules>
+  </component>
+</project>

@@ -230,6 +230,23 @@ public class Act_HistoryDetail extends BaseActivity {
                         iv_image.setVisibility(View.GONE);
                     }
                     tv_desc.setText(history_list.get(index).getmMessage());
+                   /* tv_desc.setText("It does not have to be the last parameter, but when it is, values for the following parameters have to be passed using named argument syntax, or, if the parameter has a function type, by passing a lambda outside parentheses." +
+                            "They are used to create fields or functions inside a class that can be invoked without an instance of a class, f.e: factory methods or concepts similar to static fields and functions." +
+                            "The first one creates a list consisting of two lists. Zip function creates a list of pairs- but if one of the lists contains n elements and the second contains n+1 elements, the result list will consist of only n pairs. The third one creates a list of elements from both lists. The union joins both of the lists without duplicates.");
+                   */ /*chat_list = history_list.get(index).getMmessages();
+                    rv_chat.setAdapter(new Ad_ChatList(chat_list, mContext,new Ad_ChatList.chatImageViewListener() {
+                        @Override
+                        public void chatImageClick(ModelChat chat) {
+                            Bundle bundle=new Bundle();
+                            bundle.putString("image",chat.getmMsgImageUrl());
+                            Intent intent=new Intent(Act_HistoryDetail.this, Act_imageShow.class);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
+                    }));
+                    if (chat_list.size() == 0) {
+                        rv_chat.setVisibility(View.GONE);
+                    }*/
                 }
             }
         } catch (JSONException e) {
@@ -390,6 +407,13 @@ public class Act_HistoryDetail extends BaseActivity {
 
 
                                 tv_desc.setText(feedbackHeaderData.getString("initialMessage"));
+                       /* tv_desc.setText("It does not have to be the last parameter, but when it is, values for the following parameters have to be passed using named argument syntax, or, if the parameter has a function type, by passing a lambda outside parentheses." +
+                                "They are used to create fields or functions inside a class that can be invoked without an instance of a class, f.e: factory methods or concepts similar to static fields and functions." +
+                                "The first one creates a list consisting of two lists. Zip function creates a list of pairs- but if one of the lists contains n elements and the second contains n+1 elements, the result list will consist of only n pairs. The third one creates a list of elements from both lists. The union joins both of the lists without duplicates."
+                               + "It does not have to be the last parameter, but when it is, values for the following parameters have to be passed using named argument syntax, or, if the parameter has a function type, by passing a lambda outside parentheses." +
+                                        "They are used to create fields or functions inside a class that can be invoked without an instance of a class, f.e: factory methods or concepts similar to static fields and functions." +
+                                        "The first one creates a list consisting of two lists. Zip function creates a list of pairs- but if one of the lists contains n elements and the second contains n+1 elements, the result list will consist of only n pairs. The third one creates a list of elements from both lists. The union joins both of the lists without duplicates.");
+*/
                         imageUrl = feedbackHeaderData.getString("msgImageUrl");
                         try {
                             if (!imageUrl.equalsIgnoreCase("") && !imageUrl.equals(null)) {

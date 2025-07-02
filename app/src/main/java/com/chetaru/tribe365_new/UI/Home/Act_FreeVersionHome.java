@@ -52,6 +52,7 @@ import com.chetaru.tribe365_new.UI.Know.COT.ModelOfficeDepartment;
 import com.chetaru.tribe365_new.utility.ItemOffsetDecoration;
 import com.chetaru.tribe365_new.utility.SessionParam;
 import com.chetaru.tribe365_new.utility.Utility;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.squareup.picasso.Picasso;
@@ -74,6 +75,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Act_FreeVersionHome extends BaseActivity implements View.OnClickListener, onListenerClick {
+
+
     BaseRequest baseRequest;
     Utility utility;
     SessionParam sessionParam;
@@ -88,6 +91,7 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
     List<ModelDepartmentList> li_ModelDepartmentList=new ArrayList<>();
     List<ModelOfficeDepartment> list_officedepartment= new ArrayList<>();
 
+    ArrayList<String> years= new ArrayList<String>();
     List<Integer> yearList =new ArrayList<>();
     int newYear=0;
     ArrayList<HappyIndexMonthly> calenderList;
@@ -97,10 +101,11 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
     List<String> monthsList=new ArrayList<>();
     String[] months;
     int iCurrentSelection;
-    boolean flag=true,
-            firstFlag=false;
+    boolean flag=true,firstFlag=false;
 
     Ad_HICalender ad_calenderView;
+
+
 
     /****************** initialize view ************/
     @SuppressLint("NonConstantResourceId")
@@ -125,6 +130,9 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.card_happy_index_ll)
     CardView card_happy_index_ll;
+    /*@SuppressLint("NonConstantResourceId")
+    @BindView(R.id.msg_title_text)
+    TextView msg_title_text;*/
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.happy_image)
     ImageView happy_image;
@@ -167,6 +175,10 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
     @BindView(R.id.show_hptm_button)
     Button show_hptm_button;
 
+
+   /* static final String[] Months = new String[] { "January", "February",
+            "March", "April", "May", "June", "July", "August", "September",
+            "October", "November", "December" };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -243,6 +255,8 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
         absent_card_view.setOnClickListener(v -> {
             dialogEnableAbsent();
         });
+
+
 
 
 
@@ -332,6 +346,8 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
 
         /********* spinner for Selected year list********/
         private void setYearSpinner(List<Integer> yearList){
+       // int thisYear= Calendar.getInstance().get(Calendar.YEAR);
+        //sp_year.setSelection(getIndex(sp_year));
         ArrayAdapter<Integer> adapter1 = new ArrayAdapter<>(this ,R.layout.spinner_month_item,yearList);
         adapter1.setDropDownViewResource(R.layout.spinner_month_item);
         sp_year.setAdapter(adapter1);
@@ -466,6 +482,14 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
     /******************* initialize  calender Month list **************/
     private  void  getArrayCalender(){
         calenderList=new ArrayList<>();
+       // ArrayList<CalenderValue> drawerList = new ArrayList<>();
+       /* for (int i=1;i<=30;i++){
+            if ((i & 1 )==0){
+                calenderList.add(new CalenderValue(i,R.drawable.high));
+            }else{
+                calenderList.add(new CalenderValue(i,R.drawable.low));
+            }
+        }*/
         GridLayoutManager layoutManager = new GridLayoutManager(mContext, 7);
         calender_recycler_view.setLayoutManager(layoutManager);
         calender_recycler_view.setHasFixedSize(true);
@@ -637,13 +661,19 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
         String formattedDate = df.format(c);
         starDateET.setText(formattedDate);
 
+        /*starDateET.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //starDateET.setText(start);
+                showDateCalendar(starDateET);
+            }
+        });*/
         endDateET.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showEndDate(endDateET);
             }
         });
-
         submitTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -814,12 +844,12 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-                utility.showToast(mContext,message);
+                //utility.showToast(mContext,message);
             }
         });
         HashMap<String,String> mapValue=new HashMap<>();
@@ -1004,8 +1034,7 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
                 utility.showToast(mContext, message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "orgId", orgId,
+        JsonObject object = Functions.getClient().getJsonMapObject("orgId", orgId,
                 "month",+indexofmonth+"",
                 "year",+selectedyear+"",
                 "deviceType", 1 + "",
@@ -1045,6 +1074,7 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
         JsonObject object= Functions.getClient().getJsonMapObject("userId",sessionParam.id);
         baseRequest.callAPIPost(1,object,ConstantAPI.api_userChangeLeaveStatus);
     }
+
     /************* absent Mode enable Api *****************/
     private void callAbsentApi(String startDate, String endDate) {
         baseRequest= new BaseRequest(mContext);
@@ -1101,30 +1131,55 @@ public class Act_FreeVersionHome extends BaseActivity implements View.OnClickLis
     }
 
     private void showBottomSheetDailog(){
-      /* new ActionSheet(this,getSupportFragmentManager())
-                .setCancelButtonTitle("Cancel")
-                .setOtherButtonTitles("Change  Password","Logout")
-                .setCancelableOnTouchOutside(true)
-                .setListener(new ActionSheetCallBack() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        View sheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_dialog, null);
+        bottomSheetDialog.setContentView(sheetView);
 
-                    onListenerClick
-                    @Override
-                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {
+        TextView changePassword = sheetView.findViewById(R.id.changePassword);
+        TextView logout = sheetView.findViewById(R.id.logout);
+        TextView tvcancel = sheetView.findViewById(R.id.tvcancel);
 
-                    }
+        changePassword.setOnClickListener(v -> {
+            dialogChangePassword();
+            bottomSheetDialog.dismiss();
+        });
 
-                    @Override
-                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
-                        if (index == 0){
-                            dialogChangePassword();
-                        }else if (index == 1){
-                            logoutDialog();
-                        }
+        logout.setOnClickListener(v -> {
+            logoutDialog();
+            bottomSheetDialog.dismiss();
+        });
+        tvcancel.setOnClickListener(v -> {
+            bottomSheetDialog.dismiss();
+        });
 
-                    }
-                })
-                .show();*/
+        bottomSheetDialog.show();
+
+ /* new ActionSheet(this,getSupportFragmentManager())
+           .setCancelButtonTitle("Cancel")
+           .setOtherButtonTitles("Change  Password","Logout")
+           .setCancelableOnTouchOutside(true)
+           .setListener(new ActionSheetCallBack() {
+
+               onListenerClick
+               @Override
+               public void onDismiss(ActionSheet actionSheet, boolean isCancel) {
+
+               }
+
+               @Override
+               public void onOtherButtonClick(ActionSheet actionSheet, int index) {
+                   if (index == 0){
+                       dialogChangePassword();
+                   }else if (index == 1){
+                       logoutDialog();
+                   }
+
+               }
+           })
+           .show();*/
     }
+
+
     /*popup to change password
      */
     public void dialogChangePassword() {

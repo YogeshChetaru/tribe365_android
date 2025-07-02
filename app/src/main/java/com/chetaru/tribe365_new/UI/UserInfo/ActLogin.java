@@ -490,6 +490,7 @@ public class ActLogin extends BaseActivity implements View.OnClickListener{
                         if (appVersion==1){
                             finishAllActivities();
                             startActivity(new Intent(mContext, Act_FreeVersionHome.class));
+
                         }else if (appVersion==3){
                             finishAllActivities();
                             startActivity(new Intent(mContext, BasicHomeActivity.class));
@@ -505,6 +506,7 @@ public class ActLogin extends BaseActivity implements View.OnClickListener{
                                 startActivity(intent);
                             }
                         }
+
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -522,8 +524,7 @@ public class ActLogin extends BaseActivity implements View.OnClickListener{
                 errorLayout.showError(message);
             }
         });
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "email", et_username.getText().toString().trim(),
+        JsonObject object = Functions.getClient().getJsonMapObject("email", et_username.getText().toString().trim(),
                 "password", et_password.getText().toString(),
                 "role", 3 + "",
                 "deviceType", 1 + "",

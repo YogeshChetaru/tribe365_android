@@ -76,6 +76,14 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
     BaseRequest baseRequest;
     SessionParam sessionParam;
     JSONObject reminderList;
+    Boolean rem_tribeValue = false;
+    Boolean rem_functionalLens = false;
+    Boolean rem_teamRoleAnswers = false;
+    Boolean rem_cultureStructure = false;
+    Boolean rem_motivation = false;
+    Boolean rem_tribeometer = false;
+    Boolean rem_diagnostic = false;
+    Boolean rem_bubbleRatings = false;
     private final Context context;
     private boolean isLoadingAdded= false;
     private boolean retryPageLoad= false;
@@ -133,10 +141,11 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
                                 holder.tv_notiName.setText(mFilteredList.get(position).getTitle());
                             }
                             holder.tv_desc.setText(mFilteredList.get(position).getDescription());
-                            } catch (Exception e) {
+                           // holder.tv_date.setText(utility.getDate(mFilteredList.get(position).getCreatedAt()));
+                            //holder.tv_notiName.setTextColor(context.getResources().getColor(R.color.textcolor));
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
-
                         try {
                             if (!mFilteredList.get(position).getDescription().equals("")) {
                                 holder.des_ll.setVisibility(View.VISIBLE);
@@ -180,6 +189,8 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
                                 }else {
                                     holder.tv_date.setText(date);
                                 }
+                                //holder.tv_date.setVisibility(View.GONE);
+
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -328,6 +339,13 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
                                     } else if (mFilteredList.get(position).getDescription().equals(context.getString(R.string.todolist_Review_DiagnosticSurvey))) {
                                         context.startActivity(new Intent(context, Act_Update_Diagnostics_list.class).putExtra("checklist", "checklist"));
                                     } else {
+                          /*  context.startActivity(new Intent(context, Act_Report.class)
+                                    .putExtra("backHandel", "notiBack")
+                                    .putExtra("date", list.get(position).getCreatedAt()));*/
+                           /* context.startActivity(new Intent(context, Act_Home.class)
+                                     .putExtra("kudosClick", true)
+                                    .putExtra("backHandel","notiBack")
+                            );*/
                                         mListener.KudosClick();
                                     }
                                 }
@@ -414,7 +432,12 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
                                 } else if (mFilteredList.get(position).getDescription().equals(context.getString(R.string.todolist_Review_DiagnosticSurvey))) {
                                     context.startActivity(new Intent(context, Act_Update_Diagnostics_list.class).putExtra("checklist", "checklist"));
                                 } else {
-
+                        /*context.startActivity(new Intent(context, Act_Report.class)
+                                .putExtra("backHandel", "notiBack")
+                                .putExtra("date", list.get(position).getCreatedAt()));*/
+                        /*context.startActivity(new Intent(context,Act_Home.class)
+                                .putExtra("kudosClick",true)
+                                .putExtra("handelBack","noti"));*/
                                     mListener.KudosClick();
                                 }
                             }
@@ -439,7 +462,9 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
                             loadingVH.mErrorLayout.setVisibility(View.GONE);
                             loadingVH.mProgressBar.setVisibility(View.VISIBLE);
                         }
-                                        }
+
+                    //loadingVH.mProgressBar.setVisibility(View.GONE);
+                }
                       }catch (Exception e){
                         e.printStackTrace();
                     }
@@ -526,17 +551,23 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
             }
         });
         //JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.companyOrgId
-        JsonObject object = Functions.getClient().getJsonMapObject(
-                "notificationId", id
+        JsonObject object = Functions.getClient().getJsonMapObject("notificationId", id
         );
         baseRequest.callAPIPost(1, object, ConstantAPI.changeNotificationStatus);
     }
 
     public void dialog_champion(ModelNotificationList NotiList) {
+
+        //clearSelection();
+        //AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(context, R.style.cust_dialog));
+
+
         final Dialog dialog = new Dialog(context, R.style.cust_dialog);
+        //final Dialog dialog = builder.create();
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_champion);
 
+        //dialog.setCanceledOnTouchOutside(true);
 
         final TextView tv_des = dialog.findViewById(R.id.dia_des);
         final TextView tv_user_msg = dialog.findViewById(R.id.dia_user_name);
@@ -555,7 +586,22 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
                 dialog.dismiss();
             }
         });
+       /* valueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });*/
+       /* WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        Window window = dialog.getWindow();
+        lp.copyFrom(window.getAttributes());
+        lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        window.setAttributes(lp);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));*/
 
+        //window.setBackgroundDrawableResource(R.color.red);
         Window window = dialog.getWindow();
         window.setGravity(Gravity.CENTER);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -589,8 +635,17 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
         } catch (Exception e) {
             e.printStackTrace();
         }
+       /* String userImage=notiList.getmUserName();
+        if(!userImage.isEmpty()){
+            String splitValue[] = userImage.split(",");
+            for(int i=0;i<splitValue.length;i++){
+                selectedValueLsit.add(splitValue[i]);
+                mylist.setmUserImage(splitValue[i]);
+            }
+        }*/
 
         final Dialog dialog = new Dialog(context, R.style.cust_dialog);
+        //final Dialog dialog = builder.create();
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_champion_multipule);
         //adapter
@@ -610,9 +665,11 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
 
     private void ShowDiscDialog(final ModelNotificationList NotiList) {
         final Dialog dialog = new Dialog(context);
-
+        //final Dialog dialog = builder.create();
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.dialog_descfull);
+
+        //dialog.setCanceledOnTouchOutside(true);
 
         final TextView tv_notiName = dialog.findViewById(R.id.tv_dia_notiName);
         final TextView tv_desc = dialog.findViewById(R.id.tv_dia_desc);
@@ -647,6 +704,7 @@ public class Ad_UnreadNotification extends RecyclerView.Adapter<Ad_UnreadNotific
         } catch (Exception e) {
             e.printStackTrace();
         }
+        // Picasso.get().load(NotiList.getmUserImage()).into(diaIcon);
 
         Window window = dialog.getWindow();
         window.setGravity(Gravity.CENTER);

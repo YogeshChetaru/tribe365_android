@@ -61,6 +61,7 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
 
     BaseRequest baseRequest;
     ArrayList<ModelAddActionUser> modelUserList;
+    HomeDetailResponse homeDetail = new HomeDetailResponse();
     Utility utility;
     SessionParam sessionParam;
     String orgId="";
@@ -138,7 +139,7 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.act_member_home);
+        //setContentView(R.layout.act_member_home);
         ButterKnife.bind(this);
         utility=new Utility();
         sessionParam =new SessionParam(mContext);
@@ -158,6 +159,7 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
         /************* Api calling **************/
         api_getUserByType();
         getMemberHome(userId);
+       // getHomePageDetails();
     }
 
 
@@ -167,6 +169,12 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
         personalityList=new ArrayList<>();
         teamRoleList=new ArrayList<>();
         motivationalList=new ArrayList<>();
+
+        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset_small);
+
+
+
+
         /********** get belief recycler View *******/
         LinearLayoutManager beliefLayoutManager = new LinearLayoutManager(mContext);
         rv_belief_list.setLayoutManager(beliefLayoutManager);
@@ -175,6 +183,21 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
         rv_belief_list.setNestedScrollingEnabled(false);
 
 
+      /*  String persData="Ext(3),Innov(3),Ppl(2),Flxbl(8)";
+        String[] arrayString = persData.split(",");
+        personalityList.addAll(Arrays.asList(arrayString));*/
+
+       /* String teamData="Deliberator, Value Driver, Auditor";
+        String[] teamString = teamData.split(",");
+        teamRoleList.addAll(Arrays.asList(teamString));*/
+
+      /*  String motiData="Financial Security, Stress Free, Self Growth";
+        String[] motiString = motiData.split(",");
+        motivationalList.addAll(Arrays.asList(motiString));*/
+
+        //setPersonalityData(personalityList);
+        //setTeamRoleDAta(teamRoleList);
+        //setMotivationalData(motivationalList);
 
     }
 
@@ -207,9 +230,11 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
     private void setPersonalityData(List<PersonalityType> personalityList) {
         /********** get personality recycler View *******/
         LinearLayoutManager personalityLayoutManager = new GridLayoutManager(mContext, 2);
+       // ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.item_offset_small);
 
         rv_personality_list.setLayoutManager(personalityLayoutManager);
         rv_personality_list.setHasFixedSize(true);
+       // rv_personality_list.addItemDecoration(itemDecoration);
         rv_personality_list.setNestedScrollingEnabled(false);
         ad_personalityType=new Ad_personalityType(personalityList,mContext);
         rv_personality_list.setAdapter(ad_personalityType);
@@ -295,9 +320,19 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
                 userId = modelUserList.get(position).getId() + "";
                 firstName=modelUserList.get(position).getName();
                 lastName=modelUserList.get(position).getLastName();
+               /* if (sessionParam.id.equals(userId)) {
+                    tv_undoMoti.setVisibility(View.VISIBLE);
 
+                } else {
+                    tv_undoMoti.setVisibility(View.GONE);
+                    tv_undo.setVisibility(View.GONE);
+                    tv_undo_personalityType.setVisibility(View.GONE);
+                }
+                btn_personalityType_nrf.setVisibility(View.GONE);
+                allKnowMemberLayout.setVisibility(View.VISIBLE);*/
                 personaliseDataMsg.setVisibility(View.GONE);
                 personaliseDataMsg.setText(modelUserList.get(position).getName() + " " + modelUserList.get(position).getLastName() +" "+ " data is personalised");
+              //  getAllData(userId, modelUserList.get(position).getName(), modelUserList.get(position).getLastName());
                 /*********** call Api for get user Report data ********/
                 getMemberHome(userId);
                 dialog.dismiss();
@@ -339,23 +374,24 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
+                // dialogResponsible();
             }
 
             @Override
             public void onFailure(int requestCode, String errorCode, String message) {
-
+                //errorLayout.showError(message);
                 utility.showToast(mContext, message);
             }
 
             @Override
             public void onNetworkFailure(int requestCode, String message) {
-
+                //errorLayout.showError(message);
                 utility.showToast(mContext, message);
             }
         });
 
 
+        //JsonObject object = Functions.getClient().getJsonMapObject("orgId", sessionParam.companyOrgId
         JsonObject object = Functions.getClient().getJsonMapObject("type", "organisation",
                 "typeId", sessionParam.orgId
 
@@ -371,7 +407,8 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
 
                 try {
                     Gson gson = new Gson();
-                   personalityList.clear();
+                   // JSONObject jsonObjectMain = new JSONObject(object.toString());
+                    personalityList.clear();
                     teamRoleList.clear();
                     motivationalList.clear();
                     memberDetail = gson.fromJson(object.toString(), KnowMemberDetails.class);
@@ -482,7 +519,7 @@ public class Act_Member_Home extends BaseActivity implements View.OnClickListene
     }
 
     private void setEngagementScore(String engagementIndexScore) {
-        Double finalCount= Double.valueOf(engagementIndexScore);
+        Double   finalCount= Double.valueOf(engagementIndexScore);
         String showEngValue=trimTrailingZeros(engagementIndexScore);
         tv_engagement_value.setText(showEngValue);
         if ( finalCount <= 499) {
