@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.khoyron:Actionsheet-android:4@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9936988017cc3ea8346847ce2605293d/transformed/jetified-Actionsheet-android-4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9936988017cc3ea8346847ce2605293d/transformed/jetified-Actionsheet-android-4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9936988017cc3ea8346847ce2605293d/transformed/jetified-Actionsheet-android-4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
